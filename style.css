@@ -1,0 +1,164 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: #fcb6b6
+}
+
+header {
+  background: #fcb6b6;
+  box-shadow:  20px 20px 60px #d69b9b,
+             -20px -20px 60px #ffd1d1;
+  display: flex;
+  min-height: 8vh;
+  justify-content: space-between;
+
+}
+
+.logo{
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+  margin: 2rem;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  /* transition-duration: 1.4s; */
+  margin-right: 1rem;
+}
+
+.nav-links{
+    grid-gap: 2rem;
+    display: flex;
+    transition: grid-gap 2s;
+}
+.nav-links a{
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a > div{
+  justify-content: center;
+  text-align: center;
+  padding-top: 6px;
+  /* background-color: #adeb97 ; */
+  /* border-radius: 5px;
+  background: #fcb6b6;
+  box-shadow:  5px 5px 10px #d69b9b,
+               -5px -5px 10px #ffd1d1; */
+  height: 30px;
+  width: 90px;
+  transition: box-shadow 0.5s, border-radius 0.5s;
+
+
+}
+.nav-links a > div:hover{
+  border-radius: 11px;
+  background: linear-gradient(145deg, #ffc3c3, #e3a4a4);
+  box-shadow:  5px 5px 5px #d99d9d,
+               -5px -5px 5px #ffcfcf;
+}
+.nav-links a > div:active{
+  border-radius: 11px;
+  background: #fcb6b6;
+  box-shadow: inset 5px 5px 5px #d99d9d,
+            inset -5px -5px 5px #ffcfcf;
+}
+
+/* TODO: Add Animation to hover and active effect for box-insets */
+.nav-links li{
+  list-style: none;
+}
+
+.burger{
+  display: none;
+}
+
+.burger div{
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 5rem;
+}
+
+@media screen and (max-width: 100rem) {
+  .nav-links
+  {
+    grid-gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 56rem) {
+  body{
+    overflow-x: hidden;
+  }
+
+  /* nav{
+    width: 30%;
+  } */
+
+  .nav-links{
+    position: fixed;
+    inset: 0 0 0 65%;
+
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2rem;
+    background: hsl(0, 0%, 100%, 0.2);
+    backdrop-filter: blur(0.3rem);
+  }
+
+  .nav-links li{
+    /* background: hsl(0, 0%, 100%, 0.2);
+    backdrop-filter: blur(0.3rem); */
+    opacity: 1;
+  }
+  .nav-links a{
+    background: hsl(0, 0%, 100%, 0.2);
+    backdrop-filter: blur(0.3rem);
+  }
+  .burger{
+    display: block;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes  navLinkFade {
+    from{
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-8px, -6px);
+}
