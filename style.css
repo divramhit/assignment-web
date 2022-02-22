@@ -1,12 +1,26 @@
+/* -------Utility Classes--------- */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* ---------End of Utility Classes---------------- */
+
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
 
-body{
+.home{
   font-family: Arial, Helvetica, sans-serif;
-    background-color: #fcb6b6
+  background-color: #fcb6b6
 }
 
 header {
@@ -16,7 +30,10 @@ header {
   display: flex;
   min-height: 8vh;
   justify-content: space-between;
+}
 
+.mobile-nav-toggle{
+  display: none;
 }
 
 .logo{
@@ -53,16 +70,9 @@ nav{
   justify-content: center;
   text-align: center;
   padding-top: 6px;
-  /* background-color: #adeb97 ; */
-  /* border-radius: 5px;
-  background: #fcb6b6;
-  box-shadow:  5px 5px 10px #d69b9b,
-               -5px -5px 10px #ffd1d1; */
   height: 30px;
   width: 90px;
   transition: box-shadow 0.5s, border-radius 0.5s;
-
-
 }
 .nav-links a > div:hover{
   border-radius: 11px;
@@ -76,24 +86,8 @@ nav{
   box-shadow:  5px 5px 5px #d99d9d,
                -5px -5px 5px #ffcfcf;
 }
-
-/* TODO: Add Animation to hover and active effect for box-insets */
 .nav-links li{
   list-style: none;
-}
-
-.burger{
-  display: none;
-}
-
-.burger div{
-  width: 30px;
-  height: 5px;
-  background-color: white;
-  margin: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-right: 5rem;
 }
 
 @media screen and (max-width: 100rem) {
@@ -104,23 +98,29 @@ nav{
 }
 
 @media screen and (max-width: 56rem) {
-  body{
-    overflow-x: hidden;
-  }
-
-  /* nav{
-    width: 30%;
-  } */
-
   .nav-links{
     position: fixed;
+    z-index: 1000;
     display: flex;
-    gap: 6rem;
+    grid-row-gap: 6rem;
     inset: 0 0 0 65%;
     align-items: center;
     flex-direction: column;
     padding: min(20vh, 10rem) 2rem;
     background: hsl(0, 0%, 100%, 0.4);
+  }
+
+  .mobile-nav-toggle{
+    display: block;
+    position: absolute;
+    z-index: 9999;         /* Z-index specifies which layer this class will appear on the page */
+    background: url("assets/hamburger-icon.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: none;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
   }
 
   @supports (backdrop-filter: blur(0.3rem)) {
@@ -134,34 +134,4 @@ nav{
     background: hsl(0, 0%, 100%, 0.2);
     backdrop-filter: blur(0.3rem);
   }
-  .burger{
-    display: block;
-  }
-}
-
-.nav-active{
-  transform: translateX(0%);
-}
-
-@keyframes  navLinkFade {
-    from{
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to{
-      opacity: 1;
-      transform: translateX(0px);
-    }
-}
-
-.toggle .line1{
-    transform: rotate(-45deg) translate(-8px, 6px);
-}
-
-.toggle .line2{
-    opacity: 0;
-}
-
-.toggle .line3{
-    transform: rotate(45deg) translate(-8px, -6px);
 }
