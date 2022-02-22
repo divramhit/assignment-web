@@ -98,6 +98,12 @@ nav{
   }
 }
 
+@media screen and (max-width: 57rem){
+  .nav-links{
+    grid-column-gap: 0rem;
+  }
+}
+
 @media screen and (max-width: 56rem) {
   .nav-links{
     position: fixed;
@@ -111,6 +117,11 @@ nav{
     background: hsl(0, 0%, 100%, 0.4);
     transform: translateX(100%);
     transition: transform 350ms ease-in;
+  }
+
+  .resize-animation-stopper * {        /*Helps to mitigate jankiness when resizing window*/
+    animation: none !important;
+    transition: none !important;
   }
 
   .nav-links[data-visible= "true"]{    /*data-visible is an attribule in the html file itself which tells us the data is visible or not*/
