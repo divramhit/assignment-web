@@ -29,7 +29,7 @@ header {
   box-shadow:  20px 20px 60px #d69b9b,
              -20px -20px 60px #ffd1d1;
   display: flex;
-  min-height: 8vh;
+  min-height: 10vh;
   justify-content: space-between;
 }
 
@@ -37,13 +37,30 @@ header {
   display: none;
 }
 
+.logo-and-name{
+  grid-gap: 3rem;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+
+}
+.logo-and-name li{
+  list-style: none;
+}
+.logo-and-name a{
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
 .logo{
   color: white;
   text-transform: uppercase;
   width: 1rem;
-  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); 
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
   aspect-ratio: 1;
-  margin: 2rem;
+  /* margin: 2rem; */
 }
 
 nav{
@@ -139,7 +156,7 @@ nav{
     width: 5rem;
     border: none;
     aspect-ratio: 1;
-    top: 0.7rem;
+    top: 0.2rem;
     right: 4rem;
   }
 
