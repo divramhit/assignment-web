@@ -65,6 +65,7 @@ body{
 }
 
 nav{
+  position: sticky;
   display: flex;
   align-items: center;
   border: none;
@@ -91,6 +92,7 @@ nav{
   /* border-radius: 11px; */
   justify-content: center;
   text-align: center;
+  align-items:stretch;
   padding-top: 6px;
   height: 30px;
   width: 90px;
@@ -135,11 +137,11 @@ nav{
     position: fixed;
     z-index: 1000;
     display: flex;
-    grid-row-gap: 6rem;
+    grid-row-gap: 1rem;
     inset: 0 0 0 65%;
     align-items: center;
     flex-direction: column;
-    padding: min(20vh, 10rem) 2rem;
+    padding: min(13vh, 10rem) 2rem;
     background: hsl(0, 0%, 100%, 0.4);
     transform: translateX(100%);
     transition: transform 350ms ease-in;
@@ -156,6 +158,8 @@ nav{
 
   .nav-links a > div{
     border-radius: 11px;
+    padding-top: 20%;
+    height: 50px;
   }
 
   .mobile-nav-toggle{
