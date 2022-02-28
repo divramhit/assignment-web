@@ -32,6 +32,7 @@ body{
   min-height: 75px;
   align-items: center;
   justify-content: space-between;
+  grid-column-gap: 1rem;
 }
 
 .mobile-nav-toggle{
@@ -72,13 +73,13 @@ body{
   border: none;
   outline: none;
   border-radius: 4px;
-background: #fcb6b6;
-box-shadow: inset 5px 5px 5px #eaa9a9,
-            inset -5px -5px 5px #ffc3c3;
+  background: #fcb6b6;
+  box-shadow: inset 5px 5px 5px #eaa9a9,
+              inset -5px -5px 5px #ffc3c3;
   height: 2.5rem;;
   min-width: 10rem;
   width: 100%;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
 }
 
 .searchbar_input:hover{
