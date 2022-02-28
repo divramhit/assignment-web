@@ -39,10 +39,12 @@ body{
 }
 
 .logo-and-name{
-  grid-gap: 3rem;
+  grid-gap: 0.1rem;
   display: flex;
   align-items: center;
-  margin-left: 2rem;
+  min-width: 260px;
+  justify-content: space-between;
+  margin-left: 3rem;
 
 }
 .logo-and-name li{
@@ -58,10 +60,26 @@ body{
 .logo{
   color: white;
   text-transform: uppercase;
-  width: 1rem;
+  width: 100%;
   filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  aspect-ratio: 1;
+  /* margin-right: 1rem; */
+  /* aspect-ratio: 1; */
   /* margin: 2rem; */
+}
+
+.searchbar_input{
+  text-indent: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+background: #f9d2d2;
+box-shadow: inset 5px 5px 5px #e8c3c3,
+            inset -5px -5px 5px #ffe1e1;
+  height: 30px;
+
+  min-width: 10rem;
+  width: 100%;
+  margin-left: 2rem;
 }
 
 nav{
@@ -113,10 +131,10 @@ nav{
   box-shadow:  5px 5px 5px #d99d9d,
                -5px -5px 5px #ffcfcf;
 }
-.nav-links a{
+
+a{
   outline: 0;
   -webkit-tap-highlight-color: transparent;
-
 }
 .nav-links li{
   list-style: none;
@@ -136,6 +154,10 @@ nav{
 }
 
 @media screen and (max-width: 56rem) {
+  .searchbar_input{
+    display: none;
+  }
+
   .nav-links{
     position: fixed;
     z-index: 1000;
@@ -199,6 +221,10 @@ nav{
 }
 
 @media screen and (max-width: 31rem){
+  .searchbar_input{
+    display: none;
+  }
+
   .mobile-nav-toggle{
     display: block;
     position: absolute;
@@ -272,13 +298,14 @@ nav{
     position: fixed;
     z-index: 1000;
     display: flex;
-    grid-row-gap: 0.5rem;
+    grid-row-gap: 1.5rem;
     inset: 0 0 0 65%;
     align-items: center;
     flex-direction: column;
     padding: min(5vh, 10rem) 2rem;
     background: hsl(0, 0%, 100%, 0.4);
     transform: translateX(100%);
+    overflow-y: scroll;
   }
 
   @supports (backdrop-filter: blur(0.3rem)) {
