@@ -72,14 +72,20 @@ body{
   border: none;
   outline: none;
   border-radius: 4px;
-background: #f9d2d2;
-box-shadow: inset 5px 5px 5px #e8c3c3,
-            inset -5px -5px 5px #ffe1e1;
-  height: 30px;
-
+background: #fcb6b6;
+box-shadow: inset 5px 5px 5px #eaa9a9,
+            inset -5px -5px 5px #ffc3c3;
+  height: 2.5rem;;
   min-width: 10rem;
   width: 100%;
   margin-left: 2rem;
+}
+
+.searchbar_input:hover{
+  box-shadow:  5px 5px 5px #eaa9a9,
+               -5px -5px 5px #ffc3c3,
+               inset 5px 5px 5px #eaa9a9,
+               inset -5px -5px 5px #ffc3c3;
 }
 
 nav{
