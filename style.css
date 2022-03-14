@@ -124,6 +124,7 @@ nav{
   align-items: center;
   border: none;
   outline: none;
+  height: 100%;
   /* transition-duration: 1.4s; */
   margin-right: 1rem;
 }
