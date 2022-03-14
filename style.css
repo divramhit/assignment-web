@@ -171,19 +171,15 @@ nav{
 }
 
 .nav-links a > div{
-  /* border-radius: 11px; */
-  /* justify-content: center;
-  text-align: center; */
-  display: grid;
-  /* align-items: center; */
+  display: flex;
+  /* display: grid; */
+  align-items: center;
   place-content: center;
-  /* padding-inline: 1rem; */
-  /* white-space: nowrap; */
-  /* height: 30px;
-  width: 90px; */
+  padding-inline: 1rem;
+  white-space: nowrap;
   min-height: 1.8rem;
-  /* width: 100%; */
-  width: 6rem;
+  width: 100%;
+  /* width: 6rem; */
   transition: box-shadow 0.5s, border-radius 0.5s;
 }
 .nav-links a > div:hover{
@@ -279,11 +275,6 @@ a{
       background: hsl(0, 0%, 100%, 0.2);
       backdrop-filter: blur(0.3rem);
     }
-  }
-
-  .nav-links a{
-    background: hsl(0, 0%, 100%, 0.2);
-    backdrop-filter: blur(0.3rem);
   }
 }
 
