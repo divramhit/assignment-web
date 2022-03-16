@@ -10,6 +10,8 @@
 </head>
 
 <body class = "home">
+
+  <!-- Primary Header -->
   <header class = "primary-header">
     <ul class = "logo-and-name">
       <li>
@@ -30,7 +32,7 @@
       <span class="sr-only">Menu</span>
     </button>
 
-    <nav>
+    <nav class="upper-navigation">
         <ul id = "nav-links" data-visible = "false" class = "nav-links">
             <li>
               <a href="login.html"><div>Login</div></a>
@@ -41,9 +43,12 @@
         </ul>
     </nav>
   </header>
+  <!-- End of Primary Header -->
+
+  <!-- Secondary Header -->
   <header class= "secondary_header">
-    <nav>
-        <ul id = "nav-links" data-visible = "false" class = "nav-links">
+    <nav class="lower-navigation">
+        <ul id = "sub-nav-links" data-visible = "false" class = "sub-nav-links">
             <li>
               <a href="index.html"><div>Home</div></a>
             </li>
@@ -55,7 +60,23 @@
             </li>
         </ul>
   </header>
+  <!-- End of Secondary Header -->
 
+  <!-- Side Bar -->
+  <nav class= "side-bar-nav">
+    <ul id="side-nav-links" class="side-nav-links" data-visible="false">
+      <li>
+        <a href="index.html"><div>Home</div></a>
+      </li>
+      <li>
+        <a href="#"><div class="products-dropdown" aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>
+      </li>
+      <li>
+        <a href="about.html"><div>About</div></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End of Side Bar -->
   <div class = "container">
 
   </div>
