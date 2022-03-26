@@ -1,0 +1,39 @@
+.home{
+
+}
+
+.home-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  grid-gap: 10px;
+}
+
+.home-container > div{
+  display: grid;
+  align-items: center;
+  place-content: center;
+  border-style: solid;
+  border-color: black;
+  border-width: thin;
+}
+
+.banner > div{
+  display: grid;
+  align-items: center;
+  place-content: center;
+  background-color: black;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+video{
+  width: 100%;
+}
+
+video::-internal-media-controls-overlay-cast-button {
+    display: none;
+}
