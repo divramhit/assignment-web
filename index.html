@@ -87,10 +87,30 @@
 
   <div class="home-container">
     <div id="banners" class="banners">
-      
-      <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-      <div><video src="assets/bannervid1.mp4" muted autoplay loop>Doesn't Support Video</video></div>
+      <button class="banner_button banner_button--left">
+        <img src="assets/chevron-left.svg" alt="">
+      </button>
+        <div class="banner_track-container">
+          <ul class="banner_track">
+            <li class="banner_slide">
+              <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
+            </li>
+            <li class="banner_slide">
+              <div><video src="assets/bannervid1.mp4" muted autoplay loop>Doesn't Support Video</video></div>
+            </li>
+          </ul>
+        </div>
+      <button class="banner_button banner_button--right">
+        <img src="assets/chevron-right.svg" alt="">
+      </button>
+
+      <div class="banner_navigation">
+        <button class="banner_indicator current-slide"></button>
+        <button class="banner_indicator"></button>
+        <!-- <button class="banner_indicator"></button> -->
+      </div>
     </div>
+
     <div id="brands" class="brands">brands</div>
     <div id="product-sales" class="product-sales">product-sales</div>
     <div id="recommended-products" class="recommended-products">recommended-products</div>
