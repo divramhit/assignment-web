@@ -14,64 +14,19 @@
   border-width: thin;
 }
 
-.banner_button {
-  width: 5rem;
-  aspect-ratio: 1;
-  position: absolute;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.banner_button img {
-  height: 100%;
-  width: 100%;
-}
-
-.banner_button--left{
-  left: 0;
-}
-
-.banner_button--right{
-  right: 0;
-}
-
-.banner_track{
-  list-style: none;
-}
-
-.banner_slide > div{
+.banners > div{
   background-color: black;
   display: flex;
   justify-content: center;
 }
 
-.banner_slide div > img{
+.banners div > img{
   height: 100%;
   width: 100%;
 }
 
-.banner_slide div > video{
+.banners div > video{
   width: 50%;
-}
-
-.banner_navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  grid-column-gap: 2rem;
-}
-
-.banner_indicator {
-  height: 0.2rem;
-  width: 4rem;
-  border: none;
-  background: rgba(105, 108, 128, 0.59);
-}
-
-.banner_indicator.current-slide{
-  background: rgba(105, 108, 128, 1);
 }
 
 video::-internal-media-controls-overlay-cast-button {
