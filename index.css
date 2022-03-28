@@ -29,6 +29,10 @@
   width: 50%;
 }
 
+.brands {
+  height: 60rem; 
+}
+
 video::-internal-media-controls-overlay-cast-button {
     display: none;
 }

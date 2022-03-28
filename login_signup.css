@@ -133,7 +133,7 @@ body{
   color: blue;
 }
 
-.form-button button {
+.form-button {
   border-style: none;
   width: 15rem;
   height: 2.5rem;
@@ -145,13 +145,13 @@ body{
   transition: box-shadow 0.5s;
 }
 
-.form-button button:hover{
+.form-button:hover{
   background: #fcb6b6;
   box-shadow:  23px 23px 37px #dea0a0,
                -23px -23px 37px #ffcccc;
 }
 
-.form-button button:active{
+.form-button:active{
   background: #fcb6b6;
 box-shadow: inset 23px 23px 37px #dea0a0,
             inset -23px -23px 37px #ffcccc;

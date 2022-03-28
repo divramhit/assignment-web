@@ -35,14 +35,3 @@ window.addEventListener("resize", () => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
-
-//This part is where the carousel is being coded for banner
-const track = document.querySelector('.banner_track');
-const slides =  Array.from(track.children);
-const nextButton = document.querySelector('.banner_button--right');
-const previousButton = document.querySelector('.banner_button--left');
-const bannerNav = document.querySelector('.banner_navigation');
-const indicators = Array.from(bannerNav.children);
-
-const slideWidth = slides[0].getBoundingClientRect().width;
-// console.log(slideSize);

@@ -35,23 +35,57 @@
             <input class="input-group" type="text" placeholder="Date Of Birth" name="DOB" onfocus="(this.type='date')" onblur="(this.type='text')" required>
           </div>
           <div>
-            <input class="input-group" type="tel" id="phone" name="phone" placeholder="230-58395467" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+            <input class="input-group" type="tel" id="phone" name="phone" placeholder="230-58395467" pattern="[0-9]{3}-[0-9]{8}">
           </div>
           <div>
-            <input  class="input-group" type="email" placeholder="123@example.com" name="email"required>
+            <input id="email" class="input-group" type="email" placeholder="123@example.com" name="email"required>
           </div>
           <div>
-            <input class="input-group" type="password" placeholder="Password" name="password" required>
+            <input id="password" class="input-group" type="password" placeholder="Password" name="password" required>
           </div>
           <div>
-            <input class="input-group" type="password" placeholder="Re-Type Password" name="confirm_password" required>
+            <input id="retype_password" class="input-group" type="password" placeholder="Re-Type Password" name="confirm_password" required>
           </div>
-          <div class="form-button">
-            <button onclick="location.href = 'index.html';">Create Account</button>
+          <div>
+            <input type="button" onclick="goToHome();" class="form-button" value="Create Account">
           </div>
         </form>
       </div>
     </div>
   </div>
 </body>
+<script>
+        const goToHome = () => {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            //validations
+            //check for empty fields
+            if (email === "" || password === "") {
+                alert("Some fields are missing");
+                return false;
+            }
+            else {
+                location.href = "index.html";
+            }
+
+            //using ajax to post data to signupHandler
+            // let request = new XMLHttpRequest();
+            //
+            // request.onload = () => {
+            //     if (request.status === 200) {
+            //         let responseData = request.responseText;
+            //         alert(responseData)
+            //         location.replace("index.html");
+            //     }
+            //     else {
+            //         alert(request.responseText);
+            //     }
+            // };
+
+            // request.open("POST", "loginHandler.php");
+            // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // request.send("username=" + username + "&password=" + password);
+        }
+</script>
 </html>
