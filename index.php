@@ -16,13 +16,13 @@
   <ul class = "logo-and-name">
     <li>
       <div class="logo">
-        <a href="index.html">
+        <a href="index.php">
           <img src="assets/logo-without-letters.svg" alt="">
         </a>
       </div>
     </li>
     <li>
-      <a href="index.html"><h4>MICRO LOGICS LTD</h4></a>
+      <a href="index.php"><h4>MICRO LOGICS LTD</h4></a>
     </li>
   </ul>
 
@@ -35,10 +35,10 @@
   <nav class="upper-navigation">
       <ul id = "nav-links" data-visible = "false" class = "nav-links">
           <li>
-            <a href="login.html"><div>Login</div></a>
+            <a href="login.php"><div>Login</div></a>
           </li>
           <li>
-            <a href="signup.html"><div>Sign Up</div></a>
+            <a href="signup.php"><div>Sign Up</div></a>
           </li>
           <li>
             <a href="#"><div><div class="cart-icon"></div></div></a>
@@ -53,7 +53,7 @@
   <nav class="lower-navigation">
       <ul id = "sub-nav-links" data-visible = "false" class = "sub-nav-links">
           <li>
-            <a href="index.html"><div>Home</div></a>
+            <a href="index.php"><div>Home</div></a>
           </li>
           <li>
             <a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>
@@ -75,13 +75,13 @@
 <nav class= "side-bar-nav">
   <ul id="side-nav-links" class="side-nav-links" data-visible="false">
     <li>
-      <a href="login.html"><div>Login</div></a>
+      <a href="login.php"><div>Login</div></a>
     </li>
     <li>
-      <a href="signup.html"><div>Sign Up</div></a>
+      <a href="signup.php"><div>Sign Up</div></a>
     </li>
     <li>
-      <a href="index.html"><div>Home</div></a>
+      <a href="index.php"><div>Home</div></a>
     </li>
     <li>
       <a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>

@@ -6,37 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="login_signup.css">
-  <title>Login Page</title>
+  <title>Sign Up Page</title>
 </head>
 
-<header class="login-header">
-  <ul class="login-nav">
-    <li><a href="signup.html">Sign Up</a></li>
-    <li><a href="index.html">Home</a></li>
+<header class="sign-up-header">
+  <ul class="sign-up-nav">
+    <li><a href="login.php">Login</a></li>
+    <li><a href="index.php">Home</a></li>
   </ul>
 </header>
 
 <body>
-  <div class= "loginContainer">
+  <div class="sign-up-container">
     <div class="title-and-form-container">
       <div class="title">
         <div class="name"><h1>MICRO LOGICS LTD</h1></div>
         <div>Your No.1 Destination For Your Electric Needs.</div>
       </div>
-      <div class="loginform">
-        <form id="login-email" class="login-email" mehtod="post">
+      <div class="signup-form">
+        <form class="sign-up-email">
           <div>
-            <input id="email" class="input-group" type="email" placeholder="123@example.com" name="email" required>
+            <input class="input-group" type="text" placeholder="First Name" name="firstname" required>
+          </div>
+          <div>
+            <input class="input-group" type="text" placeholder="Last Name" name="lastname" required>
+          </div>
+          <div>
+            <input class="input-group" type="text" placeholder="Date Of Birth" name="DOB" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+          </div>
+          <div>
+            <input class="input-group" type="tel" id="phone" name="phone" placeholder="230-58395467" pattern="[0-9]{3}-[0-9]{8}">
+          </div>
+          <div>
+            <input id="email" class="input-group" type="email" placeholder="123@example.com" name="email"required>
           </div>
           <div>
             <input id="password" class="input-group" type="password" placeholder="Password" name="password" required>
           </div>
           <div>
-            <input type="button" onclick="login();" class="form-button" value="Log in">
+            <input id="retype_password" class="input-group" type="password" placeholder="Re-Type Password" name="confirm_password" required>
           </div>
-          <div><a href="">Forgot Password?</a></div>
           <div>
-            <input type="button" onclick="goToSignup();" class="form-button" value="Sign Up">
+            <input type="button" onclick="goToHome();" class="form-button" value="Create Account">
           </div>
         </form>
       </div>
@@ -44,7 +55,7 @@
   </div>
 </body>
 <script>
-        const login = () => {
+        const goToHome = () => {
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
@@ -55,7 +66,7 @@
                 return false;
             }
             else {
-                location.href = "index.html";
+                location.href = "index.php";
             }
 
             //using ajax to post data to signupHandler
@@ -65,7 +76,7 @@
             //     if (request.status === 200) {
             //         let responseData = request.responseText;
             //         alert(responseData)
-            //         location.replace("index.html");
+            //         location.replace("index.php");
             //     }
             //     else {
             //         alert(request.responseText);
@@ -76,9 +87,5 @@
             // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             // request.send("username=" + username + "&password=" + password);
         }
-
-        const goToSignup = () => {
-          location.href = "signup.html";
-        }
-    </script>
+</script>
 </html>
