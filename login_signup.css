@@ -2,12 +2,47 @@ body{
   background: var(--loginbgcolor);
 }
 
-.loginContainer{
+.sign-up-header,
+.login-header {
+  position: sticky;
+  display: flex;
+  align-items: right;
+}
+
+.sign-up-nav,
+.login-nav {
+  display: flex;
+  margin-block: 1rem;
+  margin-inline: 2rem;
+  grid-column-gap: 2rem;
+  list-style: none;
+}
+
+.sign-up-nav li > a,
+.login-nav li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.sign-up-nav li > a:hover,
+.login-nav li > a:hover{
+  color: var(--bgcolor);
+}
+
+
+.loginContainer,
+.sign-up-container {
   margin-block: 15rem;
   margin-left: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.sign-up-container{
+  margin-block: 10rem !important;
 }
 
 .title-and-form-container{
@@ -32,7 +67,8 @@ body{
     color: blue;
 }
 
-.loginform{
+.loginform,
+.signup-form{
   width: 20rem;
   height: 25rem;
   background:var(--bgcolor);
@@ -40,12 +76,18 @@ body{
             -.2rem -.2rem .5rem #ffffff;
 }
 
-.login-email{
+.signup-form{
+  height: 38rem !important;
+}
+
+.login-email,
+.sign-up-email {
   margin-block: 2rem;
   margin-inline: 2rem;
 }
 
-.login-email > div {
+.login-email > div,
+.sign-up-email > div {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
