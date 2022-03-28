@@ -1,118 +1,22 @@
 <!DOCTYPE html>
+<?php include_once("header.php"); ?>
+
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="index.css">
-  <title>Micro Logics Ltd</title>
-  <script src= "index.js" defer></script>
-</head>
+  <head>
+    <?php commonHead("Micro Logic Ltd", "index") ?>
+  </head>
+  <body class = "home">
 
-
-<!-- Primary Header -->
-<header class = "primary-header">
-  <ul class = "logo-and-name">
-    <li>
-      <div class="logo">
-        <a href="index.php">
-          <img src="assets/logo-without-letters.svg" alt="">
-        </a>
+    <div class="home-container">
+      <div id="banners" class="banners">
+        <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
+        <!-- <div><video src="assets/bannervid1.mp4" muted autoplay loop>Doesn't Support Video</video></div> -->
       </div>
-    </li>
-    <li>
-      <a href="index.php"><h4>MICRO LOGICS LTD</h4></a>
-    </li>
-  </ul>
-
-  <input type="text" class="searchbar_input" placeholder="Search products" name="search">
-
-  <button class = "mobile-nav-toggle" aria-controls = "nav-links" aria-expanded = "false">
-    <span class="sr-only">Menu</span>
-  </button>
-
-  <nav class="upper-navigation">
-      <ul id = "nav-links" data-visible = "false" class = "nav-links">
-          <li>
-            <a href="login.php"><div>Login</div></a>
-          </li>
-          <li>
-            <a href="signup.php"><div>Sign Up</div></a>
-          </li>
-          <li>
-            <a href="#"><div><div class="cart-icon"></div></div></a>
-          </li>
-      </ul>
-  </nav>
-</header>
-<!-- End of Primary Header -->
-
-<!-- Secondary Header -->
-<header class= "secondary_header">
-  <nav class="lower-navigation">
-      <ul id = "sub-nav-links" data-visible = "false" class = "sub-nav-links">
-          <li>
-            <a href="index.php"><div>Home</div></a>
-          </li>
-          <li>
-            <a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>
-          </li>
-          <li>
-            <a href="#"><div>About</div></a>
-          </li>
-          <li>
-            <a href="#"><div>Favourites</div></a>
-          </li>
-          <li>
-            <a href="#"><div>Contact</div></a>
-          </li>
-      </ul>
-</header>
-<!-- End of Secondary Header -->
-
-<!-- Side Bar -->
-<nav class= "side-bar-nav">
-  <ul id="side-nav-links" class="side-nav-links" data-visible="false">
-    <li>
-      <a href="login.php"><div>Login</div></a>
-    </li>
-    <li>
-      <a href="signup.php"><div>Sign Up</div></a>
-    </li>
-    <li>
-      <a href="index.php"><div>Home</div></a>
-    </li>
-    <li>
-      <a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>
-    </li>
-    <li>
-      <a href="#"><div>About</div></a>
-    </li>
-    <li>
-      <a href="#"><div>Favourites</div></a>
-    </li>
-    <li>
-      <a href="#"><div>Contact</div></a>
-    </li>
-  </ul>
-</nav>
-<!-- End of Side Bar -->
-<!-- End of Header -->
-
-<!-- Home Page --->
-<body class = "home">
-
-  <div class="home-container">
-    <div id="banners" class="banners">
-      <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-      <!-- <div><video src="assets/bannervid1.mp4" muted autoplay loop>Doesn't Support Video</video></div> -->
+      <div id="brands" class="brands">brands</div>
+      <div id="product-sales" class="product-sales">product-sales</div>
+      <div id="recommended-products" class="recommended-products">recommended-products</div>
     </div>
-    <div id="brands" class="brands">brands</div>
-    <div id="product-sales" class="product-sales">product-sales</div>
-    <div id="recommended-products" class="recommended-products">recommended-products</div>
-  </div>
 
-</body>
-<!-- End Home Page --->
+  </body>
+  <!-- End Home Page --->
 </html>

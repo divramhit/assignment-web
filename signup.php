@@ -1,20 +1,11 @@
 <!DOCTYPE html>
+<?php include_once("header_login.php"); ?>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="login_signup.css">
-  <title>Sign Up Page</title>
+  <?php commonLogin("Sign Up Page"); ?>
 </head>
 
-<header class="sign-up-header">
-  <ul class="sign-up-nav">
-    <li><a href="login.php">Login</a></li>
-    <li><a href="index.php">Home</a></li>
-  </ul>
-</header>
+<?php outputHeader("Log In", "login") ?>
 
 <body>
   <div class="sign-up-container">
