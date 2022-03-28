@@ -15,7 +15,7 @@
         <div>Your No.1 Destination For Your Electric Needs.</div>
       </div>
       <div class="loginform">
-        <form id="login-email" class="login-email" mehtod="post">
+        <form id="login-email" class="login-email" method="post">
           <div>
             <input id="email" class="input-group" type="email" placeholder="123@example.com" name="email" required>
           </div>
@@ -45,27 +45,27 @@
                 alert("Some fields are missing");
                 return false;
             }
-            else {
-                location.href = "index.php";
-            }
+            // else {
+            //     location.href = "index.php";
+            // }
 
-            //using ajax to post data to signupHandler
-            // let request = new XMLHttpRequest();
-            //
-            // request.onload = () => {
-            //     if (request.status === 200) {
-            //         let responseData = request.responseText;
-            //         alert(responseData)
-            //         location.replace("index.php");
-            //     }
-            //     else {
-            //         alert(request.responseText);
-            //     }
-            // };
+            // using ajax to post data to signupHandler
+            let request = new XMLHttpRequest();
 
-            // request.open("POST", "loginHandler.php");
-            // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            // request.send("username=" + username + "&password=" + password);
+            request.onload = () => {
+                if (request.status === 200) {
+                    let responseData = request.responseText;
+                    alert(responseData)
+                    location.replace("index.php");
+                }
+                else {
+                    alert(request.responseText);
+                }
+            };
+
+            request.open("POST", "loginHandler.php");
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send("email=" + email + "&password=" + password);
         }
 
         const goToSignup = () => {

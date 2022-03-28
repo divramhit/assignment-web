@@ -56,27 +56,24 @@
                 alert("Some fields are missing");
                 return false;
             }
-            else {
-                location.href = "index.php";
-            }
 
             //using ajax to post data to signupHandler
-            // let request = new XMLHttpRequest();
-            //
-            // request.onload = () => {
-            //     if (request.status === 200) {
-            //         let responseData = request.responseText;
-            //         alert(responseData)
-            //         location.replace("index.php");
-            //     }
-            //     else {
-            //         alert(request.responseText);
-            //     }
-            // };
+            let request = new XMLHttpRequest();
 
-            // request.open("POST", "loginHandler.php");
-            // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            // request.send("username=" + username + "&password=" + password);
+            request.onload = () => {
+                if (request.status === 200) {
+                    let responseData = request.responseText;
+                    alert(responseData)
+                    location.replace("login.php");
+                }
+                else {
+                    alert(request.responseText);
+                }
+            };
+
+            request.open("POST", "signupHandler.php");
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send("email=" + email + "&password=" + password);
         }
 </script>
 </html>
