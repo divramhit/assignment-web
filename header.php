@@ -37,9 +37,10 @@ echo '';
 echo '<nav class="upper-navigation">';
 echo '<ul id = "nav-links" data-visible = "false" class = "nav-links">';
 if (isset($_SESSION["user"])){
-  $email = $_SESSION["user"]["email"];
+  $fname = $_SESSION["user"]["fname"];
+  $username = "Hi " . $fname . " !";
   echo '<li>';
-  echo "<a href='#'><div>$email</div></a>";
+  echo "<a href='#'><div>$username</div></a>";
   echo '</li>';
   echo '<li>';
   echo '<a href="logout.php"><div>Log Out</div></a>';

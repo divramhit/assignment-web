@@ -3,6 +3,7 @@
     include_once("db.php");
 
     //get data from login form
+    // $fname = filter_input(INPUT_POST, "fname" , FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
 
@@ -12,7 +13,7 @@
     $result  = $stmt ->get_result();
 
     if ($result->num_rows <= 0) {
-        echo "Account with the username " . $email . " does not exist";
+        echo "Account with the email " . $email . " does not exist";
         return false;
     }
 
@@ -24,7 +25,8 @@
 
     $loggedUser = [
         "ClientID" => $user["ClientID"],
-        "email" => $user["email"]
+        "email" => $user["email"],
+        "fname" => $user["fname"]
     ];
 
     $_SESSION["user"] = $loggedUser;

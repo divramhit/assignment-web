@@ -21,7 +21,7 @@
             <div>
               <ul>
                 <li>Laptops</li>
-                <li>Desktops</li>
+                <li>Computer Parts</li>
                 <li>Phones</li>
                 <li>Games & Consoles</li>
                 <li>Accessories</li>

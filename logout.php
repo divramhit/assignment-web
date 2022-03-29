@@ -7,7 +7,7 @@
 
     //Destroy the session
     session_destroy();
-
+    
     header("Location:/Assignment/login.php");
     exit();
 ?>
