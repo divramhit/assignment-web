@@ -30,18 +30,18 @@
           </div>
           <div class="products-display">
             <div class="products-display-container">
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
-              <div class="product-card">1</div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
+              <div class="product-card"><img src="assets/categories/priceguru-msi-msi-z270-gaming-m5-socket-.jpg" alt="..."></div>
             </div>
           </div>
         </div>

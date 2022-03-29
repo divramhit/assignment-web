@@ -1,4 +1,5 @@
 <?php
+session_start();
 function commonHead($title, $pageName) {
   echo '<meta charset="UTF-8">';
   echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
@@ -8,6 +9,7 @@ function commonHead($title, $pageName) {
   echo "<link rel='stylesheet' href='$pN'>";
   echo "<title>$title</title>";
   echo '<script src= "index.js" defer></script>';
+  echo '<script src= "utility.js" defer></script>';
 }
 echo '';
 echo '';
@@ -26,7 +28,7 @@ echo '<a href="index.php"><h4>MICRO LOGICS LTD</h4></a>';
 echo '</li>';
 echo '</ul>';
 echo '';
-echo '<input type="text" class="searchbar_input" placeholder="Search products" name="search">';
+echo '<input type="text" id="searchbar_input" class="searchbar_input" placeholder="Search products" name="search" onkeypress="handle(event)">';
 echo '';
 echo '<button class = "mobile-nav-toggle" aria-controls = "nav-links" aria-expanded = "false">';
 echo '<span class="sr-only">Menu</span>';
@@ -34,12 +36,23 @@ echo '</button>';
 echo '';
 echo '<nav class="upper-navigation">';
 echo '<ul id = "nav-links" data-visible = "false" class = "nav-links">';
-echo '<li>';
-echo '<a href="login.php"><div>Login</div></a>';
-echo '</li>';
-echo '<li>';
-echo '<a href="signup.php"><div>Sign Up</div></a>';
-echo '</li>';
+if (isset($_SESSION["user"])){
+  $email = $_SESSION["user"]["email"];
+  echo '<li>';
+  echo "<a href='#'><div>$email</div></a>";
+  echo '</li>';
+  echo '<li>';
+  echo '<a href="logout.php"><div>Log Out</div></a>';
+  echo '</li>';
+}
+else{
+  echo '<li>';
+  echo '<a href="login.php"><div>Login</div></a>';
+  echo '</li>';
+  echo '<li>';
+  echo '<a href="signup.php"><div>Sign Up</div></a>';
+  echo '</li>';
+}
 echo '<li>';
 echo '<a href="#"><div><div class="cart-icon"></div></div></a>';
 echo '</li>';
@@ -83,7 +96,7 @@ echo '<li>';
 echo '<a href="index.php"><div>Home</div></a>';
 echo '</li>';
 echo '<li>';
-echo '<a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>';
+echo '<a href="products.php"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>';
 echo '</li>';
 echo '<li>';
 echo '<a href="#"><div>About</div></a>';
