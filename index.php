@@ -6,7 +6,6 @@
     <?php commonHead("Micro Logic Ltd", "index") ?>
   </head>
   <body class = "home">
-
     <div class="home-container">
       <div id="banners" class="banners">
         <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>

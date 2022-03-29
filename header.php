@@ -56,7 +56,7 @@ echo '<li>';
 echo '<a href="index.php"><div>Home</div></a>';
 echo '</li>';
 echo '<li>';
-echo '<a href="#"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>';
+echo '<a href="products.php"><div aria-expanded="false">Products<span class="dropdown_icon"></span></div></a>';
 echo '</li>';
 echo '<li>';
 echo '<a href="#"><div>About</div></a>';
