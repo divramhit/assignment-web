@@ -26,7 +26,7 @@ function handle(e){
                 return;
             }
             alert(queryvalue);
-            // let querypath = "products.php?query=" + queryvalue;
-            // location.replace(querypath);
+            let querypath = "products.php?query=" + queryvalue;
+            location.replace(querypath);
         }
     }

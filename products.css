@@ -81,6 +81,11 @@
   cursor: pointer;
 }
 
+.categories-container div > ul > li > a{
+  color: black;
+  text-decoration: none;
+}
+
 .products-display{
   /* place-content: center; */
   /* align-items: center; */
