@@ -6,7 +6,7 @@
     <?php commonHead("Products", "products") ?>
   </head>
 
-<body >
+<body>
   <div class="products-menu">
     <div class="products-container">
       <div class="container-struct">

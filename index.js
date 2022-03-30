@@ -35,3 +35,7 @@ window.addEventListener("resize", () => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
+
+$(window).load(function() {
+  $("body").removeClass("preload");
+});
