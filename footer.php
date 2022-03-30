@@ -67,7 +67,8 @@
     <div class="bottom">
       <center>
         <span class="credit">Designed By <a href="#">MLL</a> | </span>
-        <span class="far fa-copyright"></span><span> 2022 All rights reserved.</span>
+        <span class="far fa-copyright"></span><span><script>document.write(new Date().getFullYear());</script>
+          All rights reserved.</span>
       </center>
     </div>
   </footer>
