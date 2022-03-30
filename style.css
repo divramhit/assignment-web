@@ -527,7 +527,7 @@ a{
 }
 /*footer*/
 footer{
-  position: relative;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   background: #111;
@@ -541,13 +541,14 @@ footer{
 }
 .box h2{
   font-size: 1.25rem;
+  color: #cecece;
+  color: #
   font-weight: 600;
   text-transform: uppercase;
-  color: #cecece;
 }
 .box .content{
   margin:20px 0 0 0;
-  position: fixed;
+  position: relative;
 }
 .box .content:before{
   position: absolute;
@@ -582,15 +583,16 @@ footer{
   line-height: 40px;
   text-align: center;
   font-size: 18px;
+  color: #cecece;
   border-radius: 5px;
   transition: 0.3s;
-  color: #cecece;
 }
 .left .content .social a span:hover{
   background: #f12020;
 }
 .center .content .fas{
   font-size: 1.4375rem;
+  color: #cecece;
   background: #1a1a1a;
   height: 45px;
   width: 45px;
@@ -599,7 +601,6 @@ footer{
   border-radius: 50%;
   transition: 0.3s;
   cursor: pointer;
-  color: #cecece;
 }
 .center .content .fas:hover{
     background: #f12020;
@@ -616,6 +617,7 @@ footer{
 }
 .right form .text{
   font-size: 1.0625rem;
+  color: #cecece;
   margin-bottom: 2px;
   color: #656565;
 }
@@ -659,14 +661,11 @@ footer{
 .bottom center{
   padding: 5px;
   font-size: 0.9375rem;
+  color: #cecece;
   background: #151515;
 }
 .bottom center span{
   color: #656565;
-}
-.bottom center a{
-  color: #cecece;
-  text-decoration: none
 }
 @media screen and (max-width: 900px){
   footer{
@@ -681,7 +680,7 @@ footer{
       margin: 5px 0;
     }
 }
-/*end of footer*/
+/*end of footer
 
 
 
