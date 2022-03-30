@@ -57,13 +57,27 @@
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
             let firstname = document.getElementById("firstname").value;
-
+            let lastname = document.getElementById("lastname").value;
+            let DoB = document.getElementById("DOB").value;
+            let phoneNum = document.getElementById("firstname").value;
+            let street = document.getElementById("street").value;
+            let city = document.getElementById("city").value;
+            let retype_password = document.getElementById("retype_password").value;
 
             //validations
             //check for empty fields
-            if (email === "" || password === "" || firstname === "") {
+            if (email === "" || password === "" || firstname === "" ||
+                lastname === ""|| DoB === ""|| phoneNum === ""
+                  || street === ""|| city === ""||retype_password==="") {
                 alert("Some fields are missing");
                 return false;
+            }
+            if (retype_password===password){
+              alert("Password created successfully");
+            }
+            else{
+              alert("Incorrectly typed password");
+              return false;
             }
 
 
