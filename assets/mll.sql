@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 07:33 PM
+-- Generation Time: Mar 31, 2022 at 01:17 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -60,7 +60,6 @@ CREATE TABLE `client` (
   `ClientID` int(11) NOT NULL,
   `fname` text NOT NULL,
   `lname` text NOT NULL,
-  `sex` set('M','F') NOT NULL,
   `dob` date NOT NULL,
   `email` text NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -72,13 +71,15 @@ CREATE TABLE `client` (
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`ClientID`, `fname`, `lname`, `sex`, `dob`, `email`, `password`, `street`, `city`) VALUES
-(1, 'Paul', 'Smith', 'M', '1992-03-12', 'psmith1992@gmail.com', 'paulsmith1234', 'Berthaud Street', 'Curepipe'),
-(2, 'Cecilia ', 'Fletcher', 'F', '1997-03-06', 'cecialia06@gmail.com', 'ceciliafletcher1234', 'Paratin St', 'Vacoas'),
-(3, 'Tara ', 'Willis', 'F', '1999-03-03', 'tarawillis@gmail.com', 'tarawillis1234', 'Pelican Street', 'Floreal'),
-(4, 'Reuben ', 'Mcghee', 'M', '1997-03-21', 'reubsmcghee97@gmail.com', 'reubenmcghee1234', 'Stork Lane', 'Port Louis'),
-(5, 'Mack ', 'Robson', 'M', '1998-09-17', 'mackrobbs1998@gmail.com', 'mackrobson1234', 'Dr Ferriere Avenue', 'Quatre Bornes'),
-(6, 'Divankar', 'Ramhit', '', '0000-00-00', 'ramhit828@gmail.com', 'shreedhar12', '', '');
+INSERT INTO `client` (`ClientID`, `fname`, `lname`, `dob`, `email`, `password`, `street`, `city`) VALUES
+(1, 'Paul', 'Smith', '1992-03-12', 'psmith1992@gmail.com', 'paulsmith1234', 'Berthaud Street', 'Curepipe'),
+(2, 'Cecilia ', 'Fletcher', '1997-03-06', 'cecialia06@gmail.com', 'ceciliafletcher1234', 'Paratin St', 'Vacoas'),
+(3, 'Tara ', 'Willis', '1999-03-03', 'tarawillis@gmail.com', 'tarawillis1234', 'Pelican Street', 'Floreal'),
+(4, 'Reuben ', 'Mcghee', '1997-03-21', 'reubsmcghee97@gmail.com', 'reubenmcghee1234', 'Stork Lane', 'Port Louis'),
+(5, 'Mack ', 'Robson', '1998-09-17', 'mackrobbs1998@gmail.com', 'mackrobson1234', 'Dr Ferriere Avenue', 'Quatre Bornes'),
+(6, 'Divankar', 'Ramhit', '0000-00-00', 'ramhit828@gmail.com', 'shreedhar12', '', ''),
+(7, '', '', '0000-00-00', 'ramomr@fiow.com', 'aodwkoakd', '', ''),
+(8, '', '', '0000-00-00', 'duawhdu@idjawd.com', 'dahdiuoaw', '', '');
 
 -- --------------------------------------------------------
 
@@ -268,7 +269,7 @@ ALTER TABLE `shopping_cart`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `ClientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ClientID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `ordertable`
