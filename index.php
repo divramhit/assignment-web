@@ -90,6 +90,7 @@
 
   </body>
   <!-- End Home Page --->
+  <?php include_once("footer.php"); ?>
   <script>
      $(document).ready(function() {
           $("#banner-slider").lightSlider({

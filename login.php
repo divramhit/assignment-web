@@ -34,6 +34,7 @@
     </div>
   </div>
 </body>
+<?php include_once("footer.php"); ?>
 <script>
         const login = () => {
             let email = document.getElementById("email").value;

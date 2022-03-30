@@ -1,5 +1,9 @@
 body{
-  background: var(--loginbgcolor);
+  /* background: var(--loginbgcolor); */
+  background: url(assets/login_signup_bg.jpg), rgba(27, 105, 35, 0.37);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .sign-up-header,
@@ -42,7 +46,7 @@ body{
 }
 
 .sign-up-container{
-  margin-block: 10rem !important;
+  margin-block: 5rem !important;
 }
 
 .title-and-form-container{
@@ -72,12 +76,11 @@ body{
   width: 20rem;
   height: 25rem;
   background:var(--bgcolor);
-  box-shadow: .3rem .3rem .6rem #d69b9b,
-            -.2rem -.2rem .5rem #ffffff;
+  box-shadow: var(--searchbar_input-focus);
 }
 
 .signup-form{
-  height: 38rem !important;
+  height: 47rem !important;
 }
 
 .login-email,
@@ -103,8 +106,7 @@ body{
   outline: none;
   border-radius: 4px;
   background:var(--bgcolor);
-  box-shadow: inset 0.2rem 0.2rem 0.2rem #eaa9a9,
-              inset -0.2rem -0.2rem 0.5rem #ffc3c3;
+  box-shadow: var(--searchbar_input-normal);
   height: 2.5rem;
   width: 15rem;
   min-width: 10rem;
@@ -115,8 +117,7 @@ body{
 }
 .input-group:focus{
   outline: none;
-  box-shadow: .3rem .3rem .6rem #d69b9b,
-            -.2rem -.2rem .5rem #ffd1d1;
+  box-shadow: var(--searchbar_input-focus);
 }
 
 .form-button{
@@ -141,18 +142,18 @@ body{
   font-family: Poppins, sans-serif;
   font-weight: bolder;
   font-size: 1.2rem;
-  background: #f9d3d3;
+  background: rgba(255, 124, 124, 0.64);
   transition: box-shadow 0.5s;
 }
 
 .form-button:hover{
-  background: #fcb6b6;
-  box-shadow:  23px 23px 37px #dea0a0,
-               -23px -23px 37px #ffcccc;
+  background: rgba(255, 56, 56, 1);
+  box-shadow:  23px 23px 37px #bebebe,
+               -23px -23px 37px #ffffff;
 }
 
 .form-button:active{
-  background: #fcb6b6;
-box-shadow: inset 23px 23px 37px #dea0a0,
-            inset -23px -23px 37px #ffcccc;
+background: rgba(255, 56, 56, 1);
+box-shadow: inset 23px 23px 37px #6c0e0e,
+            inset -23px -23px 37px #ff3232;
 }

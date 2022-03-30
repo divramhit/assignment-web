@@ -16,6 +16,9 @@
 .lSSlideWrapper{
     background-color: black !important;
 }
+.lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a{
+  background-color: #f12020 !important;
+}
 
 /* .banners div > img{
   height: 100%;

@@ -10,6 +10,7 @@ function commonHead($title, $pageName) {
   echo "<title>$title</title>";
   echo '<script src= "index.js" defer></script>';
   echo '<script src= "utility.js" defer></script>';
+  echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>';
 }
 echo '';
 echo '';

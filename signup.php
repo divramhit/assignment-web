@@ -17,16 +17,22 @@
       <div class="signup-form">
         <form class="sign-up-email">
           <div>
-            <input class="input-group" type="text" placeholder="First Name" name="firstname" required>
+            <input id= "firstname" class="input-group" type="text" placeholder="First Name" name="firstname" required>
           </div>
           <div>
-            <input class="input-group" type="text" placeholder="Last Name" name="lastname" required>
+            <input id = "lastname" class="input-group" type="text" placeholder="Last Name" name="lastname" required>
           </div>
           <div>
-            <input class="input-group" type="text" placeholder="Date Of Birth" name="DOB" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+            <input id = "DOB" class="input-group" type="text" placeholder="Date Of Birth" name="DOB" onfocus="(this.type='date')" onblur="(this.type='text')" required>
           </div>
           <div>
-            <input class="input-group" type="tel" id="phone" name="phone" placeholder="230-58395467" pattern="[0-9]{3}-[0-9]{8}">
+            <input id= "phoneNum" class="input-group" type="tel" id="phone" name="phone" placeholder="230-58395467" pattern="[0-9]{3}-[0-9]{8}">
+          </div>
+          <div>
+            <input id="street" class="input-group" type="text" placeholder="Street" name="street" required>
+          </div>
+          <div>
+            <input id="city" class="input-group" type="text" placeholder="City" name="city" required>
           </div>
           <div>
             <input id="email" class="input-group" type="email" placeholder="123@example.com" name="email"required>
@@ -45,17 +51,21 @@
     </div>
   </div>
 </body>
+<?php include_once("footer.php"); ?>
 <script>
         const goToHome = () => {
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
+            let firstname = document.getElementById("firstname").value;
+
 
             //validations
             //check for empty fields
-            if (email === "" || password === "") {
+            if (email === "" || password === "" || firstname === "") {
                 alert("Some fields are missing");
                 return false;
             }
+
 
             //using ajax to post data to signupHandler
             let request = new XMLHttpRequest();
