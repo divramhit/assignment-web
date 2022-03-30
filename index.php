@@ -16,6 +16,8 @@
       <div id="recommended-products" class="recommended-products">recommended-products</div>
     </div>
 
+  <?php include_once("footer.php"); ?>
+
   </body>
   <!-- End Home Page --->
 </html>
