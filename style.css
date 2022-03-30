@@ -527,7 +527,7 @@ a{
 }
 /*footer*/
 footer{
-  position: fixed;
+  position: relative;
   bottom: 0px;
   width: 100%;
   background: #111;
@@ -547,7 +547,7 @@ footer{
 }
 .box .content{
   margin:20px 0 0 0;
-  position: relative;
+  position: fixed;
 }
 .box .content:before{
   position: absolute;

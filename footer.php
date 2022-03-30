@@ -55,7 +55,7 @@
             </div>
             <div class="msg">
               <div class="text">Message</div>
-              <textarea cols="2" rows="25" required></textarea>
+              <textarea cols="2" rows="5.5" required></textarea>
             </div>
             <div class="btn">
               <button type="submit">Send</button>
