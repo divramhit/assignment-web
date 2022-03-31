@@ -7,6 +7,7 @@ function commonLogin($title)
   echo '<meta http-equiv="X-UA-Compatible" content="ie=edge">';
   echo '<link rel="stylesheet" href="style.css">';
   echo '<link rel="stylesheet" href="login_signup.css">';
+  echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>';
   echo "<title>$title</title>";
 }
 

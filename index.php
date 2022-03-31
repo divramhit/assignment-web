@@ -42,25 +42,31 @@
           Our Brands
         </div>
         <ul id="content-slider" class="content-slider">
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-                <li>
-                    <div><img src="assets/banner1.jpeg" alt="Image cannot be displayed"></div>
-                </li>
-            </ul>
+          <li>
+              <div><img src="assets/brands/Acer.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/GoPro.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/Logitech.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/MSI.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/NVIDIA.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/Samsung.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/Sony.png" alt="Image cannot be displayed"></div>
+          </li>
+          <li>
+              <div><img src="assets/brands/Xiaomi.png" alt="Image cannot be displayed"></div>
+          </li>
+        </ul>
       </div>
       <!-- <div class="item">
             <ul id="content-slider" class="content-slider">

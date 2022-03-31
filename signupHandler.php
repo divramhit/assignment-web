@@ -24,8 +24,8 @@
         return false;
     }
 
-    $stmt = $conn -> prepare("INSERT INTO client (email, password) VALUES (?, ?)");
-    $stmt -> bind_param("ss", $email, $password);
+    $stmt = $conn -> prepare("INSERT INTO client (fname, lname, phonenum, dob, email, password, street, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt -> bind_param("ssssssss", $fname, $lname, $phonenum, $dob, $email, $password, $street, $city);
 
     $response = $stmt->execute();
     if ($response == false) {

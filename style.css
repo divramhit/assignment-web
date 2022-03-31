@@ -17,11 +17,17 @@
   --bgcolor: #e0e0e0;
   --bgColorSecondary: #1a1a1a;
   --loginbgcolor: #ffffff;
+  --footer_input_bg: #1a1a1a;
 
   --searchbar_input-normal:  inset 0.2rem 0.2rem 0.2rem #bebebe,
                               inset -0.2rem -0.2rem 0.5rem #ffffff;
   --searchbar_input-focus: .3rem .3rem .6rem #bebebe,
                           -.2rem -.2rem .5rem #ffffff;
+
+  --footer_input-normal: inset 0.2rem 0.2rem 0.2rem #151515,
+                          inset -0.2rem -0.2rem 0.5rem #1f1f1f;
+  --footer_input-focus: .3rem .3rem .6rem #151515,
+                          -.2rem -.2rem .5rem #1f1f1f;
 
   --buttonbgshadow: 2px 2px 5px #bebebe,
                -2px -2px 5px #ffffff;
@@ -140,7 +146,7 @@ body{
   list-style: none;
 }
 .logo-and-name a{
-  color: white;
+  color: black;
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
@@ -439,6 +445,7 @@ a{
     }
   }
 
+  /* Footer */
   footer{
     position: relative;
     bottom: 0px;
@@ -570,7 +577,7 @@ a{
 
 }
 
-/*footer*/
+/*footer start*/
 footer{
   /* position: relative; */
   width: 100%;
@@ -636,7 +643,7 @@ footer{
   background: #f12020;
 }
 .center .content .fas{
-  font-size: 1.4375rem;
+  font-size: 1.4rem;
   background: #1a1a1a;
   height: 45px;
   width: 45px;
@@ -672,8 +679,8 @@ footer{
   width: 100%;
   font-size: 1.0625rem;
   color: #cecece;
-  background:var(--bgcolor);
-  box-shadow: var(--searchbar_input-normal);
+  background:var(--footer_input_bg);
+  box-shadow: var(--footer_input-normal);
   padding-left: 10px;
   border: none;
   outline: none;
@@ -683,7 +690,7 @@ footer{
 }
 .input-group-footer:focus {
   outline: none;
-  box-shadow: var(--searchbar_input-focus);
+  box-shadow: var(--footer_input-focus);
 }
 .right form input{
   height: 35px;
@@ -696,6 +703,7 @@ footer{
   width: 100%;
   border: none;
   outline: none;
+  border-radius: 0.3rem;
   font-size: 1.0625rem;
   color: #cecece;
   background: #f12020;
@@ -705,6 +713,8 @@ footer{
 }
 .right form .btn button:hover{
   background: #000;
+  border-radius: 2rem;
+  box-shadow: var(--buttonbgshadowSecondary);
 }
 /*copyright*/
 .bottom center{
