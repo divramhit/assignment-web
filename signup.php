@@ -97,7 +97,7 @@
 
             request.open("POST", "signupHandler.php");
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send("fname=" + firstname "lname=" + lastname + "dob=" + DoB + "phonenum=" + phoneNum + "street=" + street + "city=" + city + "email=" + email + "&password=" + password);
+            request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
         }
 </script>
 </html>

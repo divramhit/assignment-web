@@ -3,6 +3,12 @@
     include_once("db.php");
 
     //get data from signup page
+    $fname = filter_input(INPUT_POST, "fname", FILTER_SANITIZE_STRING);
+    $lname = filter_input(INPUT_POST, "lname", FILTER_SANITIZE_STRING);
+    $dob = filter_input(INPUT_POST, "dob", FILTER_SANITIZE_STRING);
+    $phonenum = filter_input(INPUT_POST, "phonenum", FILTER_SANITIZE_STRING);
+    $street = filter_input(INPUT_POST, "street", FILTER_SANITIZE_STRING);
+    $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
 
