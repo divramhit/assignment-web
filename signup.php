@@ -54,32 +54,35 @@
 <?php include_once("footer.php"); ?>
 <script>
         const goToHome = () => {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let firstname = document.getElementById("firstname").value;
-            let lastname = document.getElementById("lastname").value;
-            let DoB = document.getElementById("DOB").value;
-            let phoneNum = document.getElementById("firstname").value;
-            let street = document.getElementById("street").value;
-            let city = document.getElementById("city").value;
-            let retype_password = document.getElementById("retype_password").value;
-
-            //validations
-            //check for empty fields
-            if (email === "" || password === "" || firstname === "" ||
-                lastname === ""|| DoB === ""|| phoneNum === ""
-                  || street === ""|| city === ""||retype_password==="") {
-                alert("Some fields are missing");
-                return false;
-            }
-            if (retype_password===password){
-              alert("Password created successfully");
-            }
-            else{
-              alert("Incorrectly typed password");
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
+          let firstname = document.getElementById("firstname").value;
+          let lastname = document.getElementById("lastname").value;
+          let DoB = document.getElementById("DOB").value;
+          let phoneNum = document.getElementById("firstname").value;
+          let street = document.getElementById("street").value;
+          let city = document.getElementById("city").value;
+          let retype_password = document.getElementById("retype_password").value;
+          //var mailformat = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+          //validations
+          //check for empty fields
+          if (email === "" || password === "" || firstname === "" ||
+              lastname === ""|| DoB === ""|| phoneNum === ""
+                || street === ""|| city === ""||retype_password==="") {
+              alert("Some fields are missing");
               return false;
-            }
+          }
+          if (retype_password!==password){
+            alert("Incorrectly typed password");
+            return false;
+          }
 
+          //email validation
+          /*if (email.match(mailformat))
+          {
+            alert("You have entered an invalid email address!");
+            return false;
+          }*/
 
             //using ajax to post data to signupHandler
             let request = new XMLHttpRequest();
@@ -97,7 +100,23 @@
 
             request.open("POST", "signupHandler.php");
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send("email=" + email + "&password=" + password);
+            request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
         }
+      /*  function ValidateEmail(inputText)
+        {
+          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if(inputText.value.match(mailformat))
+          {
+          alert("Valid email address!");
+          document.form1.text1.focus();
+          return true;
+          }
+          else
+          {
+          alert("You have entered an invalid email address!");
+          document.form1.text1.focus();
+          return false;
+        }*/
+
 </script>
 </html>
