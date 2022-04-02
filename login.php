@@ -39,6 +39,7 @@
         const login = () => {
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
             //validations
             //check for empty fields
@@ -46,9 +47,13 @@
                 alert("Some fields are missing");
                 return false;
             }
-            // else {
-            //     location.href = "index.php";
-            // }
+
+          //email validation
+          if (!email.match(mailformat))
+          {
+            alert("You have entered an invalid email address!");
+            return false;
+          }
 
             // using ajax to post data to signupHandler
             let request = new XMLHttpRequest();

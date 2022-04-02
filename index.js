@@ -26,6 +26,16 @@ navToggle.addEventListener('click', () => {
   }
 });
 
+//This part shows us which links are we on---for sub-nav-links only
+const activePage = window.location.pathname;
+const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link => {
+  if (link.href.includes(`${activePage}`)){
+
+    const btn_subnavlinks = link.querySelector('div');
+    btn_subnavlinks.classList.add('sub-nav-links-active');
+  }
+});
+
 //This part is only to prevent glitches when resizing a window as it prevents any animation from running
 let resizeTimer;
 window.addEventListener("resize", () => {
@@ -36,6 +46,6 @@ window.addEventListener("resize", () => {
   }, 400);
 });
 
-$(window).load(function() {
-  $("body").removeClass("preload");
-});
+// $(window).load(function() {
+//   $("body").removeClass("preload");
+// });

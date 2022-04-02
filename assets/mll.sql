@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2022 at 01:17 AM
+-- Generation Time: Mar 31, 2022 at 01:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -60,6 +60,7 @@ CREATE TABLE `client` (
   `ClientID` int(11) NOT NULL,
   `fname` text NOT NULL,
   `lname` text NOT NULL,
+  `phonenum` int(11) NOT NULL,
   `dob` date NOT NULL,
   `email` text NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -71,26 +72,12 @@ CREATE TABLE `client` (
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`ClientID`, `fname`, `lname`, `dob`, `email`, `password`, `street`, `city`) VALUES
-(1, 'Paul', 'Smith', '1992-03-12', 'psmith1992@gmail.com', 'paulsmith1234', 'Berthaud Street', 'Curepipe'),
-(2, 'Cecilia ', 'Fletcher', '1997-03-06', 'cecialia06@gmail.com', 'ceciliafletcher1234', 'Paratin St', 'Vacoas'),
-(3, 'Tara ', 'Willis', '1999-03-03', 'tarawillis@gmail.com', 'tarawillis1234', 'Pelican Street', 'Floreal'),
-(4, 'Reuben ', 'Mcghee', '1997-03-21', 'reubsmcghee97@gmail.com', 'reubenmcghee1234', 'Stork Lane', 'Port Louis'),
-(5, 'Mack ', 'Robson', '1998-09-17', 'mackrobbs1998@gmail.com', 'mackrobson1234', 'Dr Ferriere Avenue', 'Quatre Bornes'),
-(6, 'Divankar', 'Ramhit', '0000-00-00', 'ramhit828@gmail.com', 'shreedhar12', '', ''),
-(7, '', '', '0000-00-00', 'ramomr@fiow.com', 'aodwkoakd', '', ''),
-(8, '', '', '0000-00-00', 'duawhdu@idjawd.com', 'dahdiuoaw', '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `clientcell`
---
-
-CREATE TABLE `clientcell` (
-  `ClientID` int(11) NOT NULL,
-  `phoneNum` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `client` (`ClientID`, `fname`, `lname`, `phonenum`, `dob`, `email`, `password`, `street`, `city`) VALUES
+(1, 'Paul', 'Smith', 12345342, '1992-03-12', 'psmith1992@gmail.com', 'paulsmith1234', 'Berthaud Street', 'Curepipe'),
+(2, 'Cecilia ', 'Fletcher', 3454353, '1997-03-06', 'cecialia06@gmail.com', 'ceciliafletcher1234', 'Paratin St', 'Vacoas'),
+(3, 'Tara ', 'Willis', 87856454, '1999-03-03', 'tarawillis@gmail.com', 'tarawillis1234', 'Pelican Street', 'Floreal'),
+(4, 'Reuben ', 'Mcghee', 546874589, '1997-03-21', 'reubsmcghee97@gmail.com', 'reubenmcghee1234', 'Stork Lane', 'Port Louis'),
+(5, 'Mack ', 'Robson', 849830405, '1998-09-17', 'mackrobbs1998@gmail.com', 'mackrobson1234', 'Dr Ferriere Avenue', 'Quatre Bornes');
 
 -- --------------------------------------------------------
 
@@ -217,14 +204,8 @@ ALTER TABLE `admincell`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`ClientID`),
+  ADD UNIQUE KEY `phonenum` (`phonenum`),
   ADD UNIQUE KEY `email` (`email`) USING HASH;
-
---
--- Indexes for table `clientcell`
---
-ALTER TABLE `clientcell`
-  ADD PRIMARY KEY (`phoneNum`),
-  ADD KEY `ClientID` (`ClientID`);
 
 --
 -- Indexes for table `ordertable`
@@ -306,12 +287,6 @@ ALTER TABLE `admincell`
   ADD CONSTRAINT `admincell_ibfk_1` FOREIGN KEY (`AdminID`) REFERENCES `admin` (`AdminID`);
 
 --
--- Constraints for table `clientcell`
---
-ALTER TABLE `clientcell`
-  ADD CONSTRAINT `clientcell_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `client` (`ClientID`);
-
---
 -- Constraints for table `ordertable`
 --
 ALTER TABLE `ordertable`
@@ -333,13 +308,13 @@ ALTER TABLE `product`
 -- Constraints for table `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `client` (`ClientID`);
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `client` (`ClientID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  ADD CONSTRAINT `shopping_cart_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `client` (`ClientID`);
+  ADD CONSTRAINT `shopping_cart_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `client` (`ClientID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
