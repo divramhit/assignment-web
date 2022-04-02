@@ -54,7 +54,7 @@ body{
   grid-auto-flow: column;
   /* padding-inline: 10rem; */
   grid-column-gap: 5rem;
-  min-width: 500px;
+  width: 500px;
 }
 
 .title {
@@ -156,4 +156,30 @@ body{
 background: rgba(255, 56, 56, 1);
 box-shadow: inset 23px 23px 37px #6c0e0e,
             inset -23px -23px 37px #ff3232;
+}
+
+@media screen and (max-width: 71rem){
+  .title-and-form-container{
+    grid-auto-flow: row;
+    place-items: center;
+    text-align: center;
+  }
+
+  .loginContainer,
+  .sign-up-container {
+    margin-block: 4rem;
+    justify-content: space-around;
+    margin-left: 0rem !important;
+  }
+
+  .title{
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    width: 20rem;
+  }
+
+  .loginform,
+  .signup-form{
+    width: 17rem;
+  }
 }

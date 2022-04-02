@@ -48,6 +48,11 @@
   --text-color-secondary-nav: #ffffff;
   --text-color-secondary-nav-pressed: #000000;
 }
+/* -------remove highlight seen on mobile versions--------- */
+a, button, li{
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 /* :root {
@@ -320,11 +325,6 @@ body{
   border-radius: 5px;
   background: var(--buttonBackgroundColorSecondaryPressed);
   box-shadow: var(--buttonbgshadowSecondaryPressed);
-}
-
-a{
-  outline: 0;
-  -webkit-tap-highlight-color: transparent;
 }
 /* ------------------------------------END OF MAIN NAV-LINKS--------------------------------- */
 
@@ -724,6 +724,10 @@ footer{
   background: #000;
   border-radius: 2rem;
   box-shadow: var(--buttonbgshadowSecondary);
+}
+.right form .btn button:focus{
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 /*copyright*/
 .bottom center{

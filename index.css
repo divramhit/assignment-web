@@ -47,6 +47,7 @@
 .banner-slider li > div > video{
     /* height: 100%; */
     width: 100%;
+    margin-top: -10rem;
 }
 
 .brands{
@@ -71,5 +72,19 @@ video::-internal-media-controls-overlay-cast-button {
 @media screen and (max-width: 56rem) {
   .brands .content-slider li > div > img{
     width: 100%;
+  }
+
+  .banners .lSSlideOuter .lSPager.lSpg > li a{
+    top: -30px !important;
+    height: 2px !important;
+    width: 30px !important;
+    outline: 0 !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .banner-slider li > div > video{
+      /* height: 100%; */
+      width: 100%;
+      margin-top: -2rem;
   }
 }
