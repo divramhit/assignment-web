@@ -3,7 +3,6 @@
     include_once("db.php");
 
     //get data from login form
-    // $fname = filter_input(INPUT_POST, "fname" , FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
 
@@ -18,7 +17,7 @@
     }
 
     $user = $result->fetch_assoc();
-    if (strcmp($user["password"], $password) != 0) {
+    if (strcmp($user["password"], $password) != 0) {  //Statement to compare password in DB with password input
         echo "Wrong password for the account " . $email;
         return false;
     }

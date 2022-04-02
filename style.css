@@ -316,6 +316,12 @@ body{
   list-style: none;
 }
 
+.sub-nav-links-active{
+  border-radius: 5px;
+  background: var(--buttonBackgroundColorSecondaryPressed);
+  box-shadow: var(--buttonbgshadowSecondaryPressed);
+}
+
 a{
   outline: 0;
   -webkit-tap-highlight-color: transparent;
@@ -346,11 +352,15 @@ a{
 .side-nav-links a{
   outline: none;
   display: flex;
-  color: white;
+  color: var(--text-color-nav);
   text-decoration: none;
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
+}
+
+.side-nav-links a:active{
+  color: var(--text-color-nav-pressed);
 }
 
 .side-nav-links a > div{
@@ -368,14 +378,13 @@ a{
 
 .side-nav-links a > div:hover{
   border-radius: 11px;
-  background: linear-gradient(145deg, #ffc3c3, #e3a4a4);
+  background: var(--buttonBackgroundColor);
   box-shadow:  var(--buttonbgshadow);
 }
 .side-nav-links a > div:active{
   border-radius: 11px;
-  background: linear-gradient(145deg, #e3a4a4, #ffc3c3);
-  box-shadow:  5px 5px 5px #d99d9d,
-               -5px -5px 5px #ffcfcf;
+  background: var(--buttonBackgroundColorPressed);
+  box-shadow: var(--buttonBgShadowPressed);
 }
 /* -----------------------------------END OF SIDE BAR-------------------------------------- */
 
@@ -435,7 +444,7 @@ a{
     right: 2rem;
   }
   .mobile-nav-toggle[aria-expanded= "true"]{
-    background-image: url("assets/close-icon.svg");
+    background-image: url("assets/close.svg");
   }
 
   @supports (backdrop-filter: blur(0.4rem)) {
@@ -495,7 +504,7 @@ a{
   }
 
   .mobile-nav-toggle[aria-expanded= "true"]{
-    background-image: url("assets/close-icon.svg");
+    background-image: url("assets/close.svg");
   }
 
   .side-nav-links[data-visible= "true"]{    /*data-visible is an attribule in the html file itself which tells us the data is visible or not*/
@@ -528,7 +537,7 @@ a{
   }
 
   .mobile-nav-toggle[aria-expanded= "true"]{
-    background-image: url("assets/close-icon.svg");
+    background-image: url("assets/close.svg");
   }
 
   .side-nav-links{
@@ -564,7 +573,7 @@ a{
   }
 
   .mobile-nav-toggle[aria-expanded= "true"]{
-    background-image: url("assets/close-icon.svg");
+    background-image: url("assets/close.svg");
   }
 
   .side-nav-links{

@@ -3,6 +3,7 @@
   width: 100%;
   flex-direction: column;
   grid-gap: 10px;
+  margin-bottom: 5rem;
 }
 
 .home-container > div{
@@ -13,8 +14,8 @@
   border-width: thin; */
 }
 
-.banner-slider .lSSlideWrapper{
-    background-color: black !important;
+.banners .lSSlideWrapper{
+  background-color: black !important;
 }
 .lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a{
   background-color: #f12020 !important;
@@ -58,12 +59,9 @@
   font-weight: 1000;
 }
 
-.brands .content-slider li > div{
-
-}
 
 .brands .content-slider li > div > img{
-  height: 100%;
+  object-fit: cover;
 }
 
 video::-internal-media-controls-overlay-cast-button {

@@ -24,15 +24,18 @@
         return false;
     }
 
+    //Insert into DB
     $stmt = $conn -> prepare("INSERT INTO client (fname, lname, phonenum, dob, email, password, street, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt -> bind_param("ssssssss", $fname, $lname, $phonenum, $dob, $email, $password, $street, $city);
 
+    //If Statement execution is not successfull, display error
     $response = $stmt->execute();
     if ($response == false) {
         echo htmlspecialchars($stmt->error);
         return false;
     }
 
+    //If all of the above statements are succesfull display the following
     echo "New user succesfully created";
     return true;
 ?>
