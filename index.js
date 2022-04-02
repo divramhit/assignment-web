@@ -28,12 +28,11 @@ navToggle.addEventListener('click', () => {
 
 //This part shows us which links are we on---for sub-nav-links only
 const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll('.sub-nav-links a').forEach(link => {
+const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link => {
   if (link.href.includes(`${activePage}`)){
-    // link.classList.add('active');
 
-    const btn_navlinks = link.querySelector('div');
-    btn_navlinks.classList.add('sub-nav-links-active');
+    const btn_subnavlinks = link.querySelector('div');
+    btn_subnavlinks.classList.add('sub-nav-links-active');
   }
 });
 

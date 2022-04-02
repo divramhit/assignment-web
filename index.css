@@ -67,3 +67,9 @@
 video::-internal-media-controls-overlay-cast-button {
     display: none;
 }
+
+@media screen and (max-width: 56rem) {
+  .brands .content-slider li > div > img{
+    width: 100%;
+  }
+}

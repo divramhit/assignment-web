@@ -68,28 +68,6 @@
           </li>
         </ul>
       </div>
-      <!-- <div class="item">
-            <ul id="content-slider" class="content-slider">
-                <li>
-                    <h3>1</h3>
-                </li>
-                <li>
-                    <h3>2</h3>
-                </li>
-                <li>
-                    <h3>3</h3>
-                </li>
-                <li>
-                    <h3>4</h3>
-                </li>
-                <li>
-                    <h3>5</h3>
-                </li>
-                <li>
-                    <h3>6</h3>
-                </li>
-            </ul>
-        </div> -->
       <div id="product-sales" class="product-sales">product-sales</div>
       <div id="recommended-products" class="recommended-products">recommended-products</div>
     </div>
@@ -118,7 +96,7 @@
               speed: 1000,
               keyPress:true,
               auto: true,
-              item: 1,
+              item: 3,
               pause: 10000,
               pager: false
           });
