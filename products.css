@@ -143,3 +143,22 @@
 .product-card:hover > img {
   height: 70%;
 }
+
+@media screen and (max-width: 103rem) {
+  .products-display-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 78rem) {
+  .product-card{
+    min-width: 150px;
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 56rem) {
+  .products-categories{
+    grid-auto-flow: row;
+  }
+}
