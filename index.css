@@ -7,11 +7,7 @@
 }
 
 .home-container > div{
-  /* display: grid; */
   text-align: center;
-  /* border-style: solid;
-  border-color: black;
-  border-width: thin; */
 }
 
 .banners .lSSlideWrapper{
@@ -21,10 +17,6 @@
   background-color: #f12020 !important;
 }
 
-/* .banners div > img{
-  height: 100%;
-  width: 100%;
-} */
 .banner-slider,
 .content-slider{
   height: 100%;
@@ -34,10 +26,31 @@
 }
 .banner-slider li,
 .content-slider li{
-  /* background-color: #ed3020; */
   text-align: center;
   color: #FFF;
 }
+
+/* Overwrites for default lightSlider buttons Image */
+.lSAction > a {
+  width: 64px !important;
+  /* height: 0px !important; */
+  aspect-ratio: 1 !important;
+  background-image: none !important;
+}
+
+.lSAction > .lSPrev {
+  background-position: center !important;
+  background: url('assets/chevron-left.svg') !important;
+  background-repeat: no-repeat !important;
+}
+
+.lSAction > .lSNext {
+  background-position: center !important;
+  background: url('assets/chevron-right.svg') !important;
+  background-repeat: no-repeat !important;
+}
+
+/* End of Overwrites for default lightSlider buttons Image */
 
 .banner-slider li > div > img {
   height: 100%;
@@ -45,7 +58,6 @@
 }
 
 .banner-slider li > div > video{
-    /* height: 100%; */
     width: 100%;
     margin-top: -10rem;
 }
@@ -59,7 +71,6 @@
   font-size: 2rem;
   font-weight: 1000;
 }
-
 
 .brands .content-slider li > div > img{
   object-fit: cover;
