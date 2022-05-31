@@ -26,6 +26,8 @@ navToggle.addEventListener('click', () => {
   }
 });
 
+
+
 //This part shows us which links are we on---for sub-nav-links only
 const activePage = window.location.pathname;
 const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link => {
@@ -35,6 +37,8 @@ const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link =
     btn_subnavlinks.classList.add('sub-nav-links-active');
   }
 });
+
+
 
 //This part is only to prevent glitches when resizing a window as it prevents any animation from running
 let resizeTimer;
@@ -46,6 +50,7 @@ window.addEventListener("resize", () => {
   }, 400);
 });
 
-// $(window).load(function() {
-//   $("body").removeClass("preload");
-// });
+
+
+//This part changes the dropdown icon when pressed for the side navbar
+// const products_btn = document.querySelectorAll('');

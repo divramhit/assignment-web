@@ -1,6 +1,6 @@
 body{
   /* background: var(--loginbgcolor); */
-  background: url(assets/login_signup_bg.jpg), rgba(27, 105, 35, 0.37);
+  background: url(assets/login_signup_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

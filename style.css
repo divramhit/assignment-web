@@ -47,6 +47,9 @@
   --text-color-nav-pressed: #ffffff;
   --text-color-secondary-nav: #ffffff;
   --text-color-secondary-nav-pressed: #000000;
+
+  --product-card-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2),
+                             0 -5px 25px rgb(0, 0, 0, 0.2);
 }
 /* -------remove highlight seen on mobile versions--------- */
 a, button, li{
@@ -128,8 +131,23 @@ body{
   background-repeat: no-repeat;
   width: 1.1rem;
   aspect-ratio: 1;
+  /* top: -0.3rem;
+  right: 2rem; */
+}
+
+.side-nav-links .dropdown_icon{
+  /* color: white; */
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' fill='rgb(0, 0, 0)' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' stroke='black' stroke-width='1' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+  background-repeat: no-repeat;
+  width: 1.1rem;
+  aspect-ratio: 1;
   /* top: -0.3rem; */
   /* right: 2rem; */
+}
+
+.side-nav-links li > a > div:active > .dropdown_icon{
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' fill='rgb(0, 0, 0)' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' stroke='white' stroke-width='1' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 }
 /* -----------------------------END OF DROPDOWN ICON------------------------------------ */
 
@@ -332,7 +350,7 @@ body{
 .side-nav-links{
   position: fixed;
   overflow-y: scroll;
-  z-index: 1000;
+  z-index: 9000;
   display: flex;
   grid-row-gap: 3rem;
   inset: 0 0 0 65%;
@@ -387,7 +405,6 @@ body{
   box-shadow: var(--buttonBgShadowPressed);
 }
 /* -----------------------------------END OF SIDE BAR-------------------------------------- */
-
 
 /* -----------------------------------DIFFERENT SCREEN SIZES----------------------------------- */
 @media screen and (max-width: 100rem) {
@@ -447,24 +464,11 @@ body{
     background-image: url("assets/close.svg");
   }
 
-  @supports (backdrop-filter: blur(0.4rem)) {
+  @supports (backdrop-filter: blur(0.7rem)) {
     .side-nav-links{
       background: hsl(0, 0%, 100%, 0.5);
-      backdrop-filter: blur(0.4rem);
+      backdrop-filter: blur(0.7rem);
     }
-  }
-
-  /* Footer */
-  footer{
-    position: relative;
-    bottom: 0px;
-  }
-  .main-content{
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  .main-content .box{
-    margin: 5px 0;
   }
 }
 
@@ -510,6 +514,35 @@ body{
   .side-nav-links[data-visible= "true"]{    /*data-visible is an attribule in the html file itself which tells us the data is visible or not*/
     /* display: flex; */
     transform: translateX(0%);
+  }
+
+  /* Footer */
+  footer{
+    position: relative;
+    bottom: 0px;
+    /* margin-top: 20rem; */
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 24rem){
+  footer{
+    position: relative;
+    bottom: 0px;
+    margin-top: 20rem;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
   }
 }
 
