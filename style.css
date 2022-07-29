@@ -24,10 +24,8 @@
   --searchbar_input-focus: .3rem .3rem .6rem #bebebe,
                           -.2rem -.2rem .5rem #ffffff;
 
-  --footer_input-normal: inset 0.2rem 0.2rem 0.2rem #151515,
-                          inset -0.2rem -0.2rem 0.5rem #1f1f1f;
-  --footer_input-focus: .3rem .3rem .6rem #151515,
-                          -.2rem -.2rem .5rem #1f1f1f;
+  --footer_input-normal: #00000000;
+  --footer_input-focus: #9f9f9f;
 
   --buttonbgshadow: 2px 2px 5px #bebebe,
                -2px -2px 5px #ffffff;
@@ -204,7 +202,7 @@ body{
   margin-left: 2rem;
 }
 .searchbar_input::placeholder{
-  color: #b38d8d;
+  color: #6e6e6e;
 }
 .searchbar_input:focus{
   outline: none;
@@ -720,19 +718,25 @@ footer{
 .input-group-footer{
   width: 100%;
   font-size: 1.0625rem;
+  text-indent: 0.5ch;
   color: #cecece;
   background:var(--footer_input_bg);
-  box-shadow: var(--footer_input-normal);
+  /* box-shadow: var(--footer_input-normal); */
+  outline-style: solid;
+  outline-color: var(--footer_input-normal);
   padding-left: 10px;
-  border: none;
-  outline: none;
+  border-radius: 0rem;
+  border-color: transparent;
+  /* outline: none; */
+  transition: outline ease-out 0.3s, border-radius ease-out 0.3s;
 }
 .right form textarea{
   resize: none;
 }
 .input-group-footer:focus {
-  outline: none;
-  box-shadow: var(--footer_input-focus);
+  border-radius: 1rem ;
+  outline-width: 2px;
+  outline-color: var(--footer_input-focus);
 }
 .right form input{
   height: 35px;
@@ -744,22 +748,26 @@ footer{
   height: 40px;
   width: 100%;
   border: none;
-  outline: none;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: transparent;
   border-radius: 0.3rem;
   font-size: 1.0625rem;
   color: #cecece;
   background: #f12020;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .right form .btn button:hover{
   background: #000;
   border-radius: 2rem;
-  box-shadow: var(--buttonbgshadowSecondary);
+  outline-color: var(--footer_input-focus);
 }
 .right form .btn button:focus{
-  outline: 0;
+  /* outline: 0; */
+  color: #000000;
+  background: #ffffff;
   -webkit-tap-highlight-color: transparent;
 }
 /*copyright*/
