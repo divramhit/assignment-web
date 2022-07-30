@@ -4,9 +4,9 @@
   justify-content: center;
 }
 .products-container{
-  height: 200vh;
+  height: 100%;
   width: 75%;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
   /* background-color: green; */
 }
 .container-struct{
@@ -30,13 +30,12 @@
 .products-header-container{
   display: flex;
   justify-content: center;
-  color: white;
+  color: black;
   height: 100%;
 }
 
 .products-header{
   font-size: 2rem;
-  color: white;
   font-weight: bolder;
 }
 
@@ -52,7 +51,7 @@
   display: grid;
   /* justify-content: space-between; */
   width: 100%;
-  height: 50rem;
+  height: 100%;
 }
 
 .products-categories > div{
@@ -91,6 +90,7 @@
   /* place-content: center; */
   /* align-items: center; */
   width: 100%;
+
 }
 
 .products-display-container {
@@ -103,7 +103,6 @@
   padding-inline: 2rem;
   margin-inline: 5rem;
   margin-block: 2rem;
-
 }
 
 /* .products-display-container div {
@@ -122,14 +121,16 @@
   min-width: 250px;
   height: 20rem;
   overflow: hidden;
-  transition: transform 0.2s ease-out;
+  box-shadow:  0 5px 10px rgba(159, 159, 159, 0),
+               0 -5px 10px rgba(255, 255, 255, 0);
+  transition: box-shadow 0.2s, transform 0.2s ease-out ;
 }
 
 .product-card > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  transition: height 350ms ease-out;
+  transition: height 150ms ease-in;
 }
 
 .product-card:hover,
@@ -137,9 +138,61 @@
   /* margin: 0% 0% 0%; */
   transform: scale(1.1);
   background-color: blue;
+  box-shadow:  var(--product-card-box-shadow);
   z-index: 3000;
 }
 
 .product-card:hover > img {
   height: 70%;
+}
+
+@media screen and (max-width: 103rem) {
+  .products-display-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 78rem) {
+  .product-card{
+    min-width: 150px;
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 56rem) {
+  .products-categories{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .products-menu{
+    margin-top: 0rem;
+  }
+
+  .primary-header{
+    margin-bottom: 0rem !important;
+  }
+
+  .products-header {
+    font-size: 1.5rem;
+  }
+
+  .products-header-container{
+    font-size: 0.8rem;
+  }
+
+  .categories-container div > ul {
+    display: none;
+  }
+
+  .categories-container div > ul > li {
+    font-size: 0.5rem;
+  }
+
+  .products-display-container{
+    grid-template-columns: 1fr;
+    padding-inline: 0.2rem;
+    margin-inline: 25%;
+    margin-block: 0.2rem;
+  }
 }

@@ -3,14 +3,14 @@
     include_once("db.php");
 
     //get data from signup page
-    $fname = filter_input(INPUT_POST, "fname", FILTER_SANITIZE_STRING);
-    $lname = filter_input(INPUT_POST, "lname", FILTER_SANITIZE_STRING);
-    $dob = filter_input(INPUT_POST, "dob", FILTER_SANITIZE_STRING);
-    $phonenum = filter_input(INPUT_POST, "phonenum", FILTER_SANITIZE_STRING);
-    $street = filter_input(INPUT_POST, "street", FILTER_SANITIZE_STRING);
-    $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_STRING);
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $dob = $_POST["dob"];
+    $phonenum = $_POST["phonenum"];
+    $street = $_POST["street"];
+    $city = $_POST["city"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
 
 
     //find existing users with the same username or email;
@@ -20,7 +20,7 @@
     $result  = $stmt ->get_result();
 
     if ($result->num_rows > 0) {
-        echo "Account with this email or username already exists";
+        echo json_encode("Account with this email or username already exists");
         return false;
     }
 
@@ -31,11 +31,11 @@
     //If Statement execution is not successfull, display error
     $response = $stmt->execute();
     if ($response == false) {
-        echo htmlspecialchars($stmt->error);
+        echo json_encode(htmlspecialchars($stmt->error));
         return false;
     }
 
     //If all of the above statements are succesfull display the following
-    echo "New user succesfully created";
+    echo json_encode("New user succesfully created");
     return true;
 ?>

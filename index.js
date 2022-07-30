@@ -26,15 +26,31 @@ navToggle.addEventListener('click', () => {
   }
 });
 
+
+
 //This part shows us which links are we on---for sub-nav-links only
 const activePage = window.location.pathname;
 const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link => {
-  if (link.href.includes(`${activePage}`)){
+  console.log(`${activePage}`);
+  console.log(link.id);
 
-    const btn_subnavlinks = link.querySelector('div');
+  const btn_subnavlinks = link.querySelector('div');
+  if (!(`${activePage}`.includes(link.id))){
+    btn_subnavlinks.classList.remove('sub-nav-links-active');
+  }
+
+  if ((`${activePage}`) == "/Assignment/"){
+    if (link.id == "index.php"){
+      btn_subnavlinks.classList.add('sub-nav-links-active');
+    }
+  }
+
+  if (`${activePage}`.includes(link.id)){
     btn_subnavlinks.classList.add('sub-nav-links-active');
   }
 });
+
+
 
 //This part is only to prevent glitches when resizing a window as it prevents any animation from running
 let resizeTimer;
@@ -46,6 +62,7 @@ window.addEventListener("resize", () => {
   }, 400);
 });
 
-// $(window).load(function() {
-//   $("body").removeClass("preload");
-// });
+
+
+//This part changes the dropdown icon when pressed for the side navbar
+// const products_btn = document.querySelectorAll('');

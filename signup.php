@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <?php commonLogin("Sign Up Page"); ?>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <?php outputHeader("Log In", "login") ?>
@@ -59,19 +60,12 @@
           let firstname = document.getElementById("firstname").value;
           let lastname = document.getElementById("lastname").value;
           let DoB = document.getElementById("DOB").value;
-<<<<<<< HEAD
-          let phoneNum = document.getElementById("firstname").value;
-          let street = document.getElementById("street").value;
-          let city = document.getElementById("city").value;
-          let retype_password = document.getElementById("retype_password").value;
-          //var mailformat = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-=======
           let phoneNum = document.getElementById("phoneNum").value;
           let street = document.getElementById("street").value;
           let city = document.getElementById("city").value;
           let retype_password = document.getElementById("retype_password").value;
           var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
->>>>>>> development
+
           //validations
           //check for empty fields
           if (email === "" || password === "" || firstname === "" ||
@@ -80,19 +74,6 @@
               alert("Some fields are missing");
               return false;
           }
-<<<<<<< HEAD
-          if (retype_password!==password){
-            alert("Incorrectly typed password");
-            return false;
-          }
-
-          //email validation
-          /*if (email.match(mailformat))
-          {
-            alert("You have entered an invalid email address!");
-            return false;
-          }*/
-=======
 
           //email validation
          if (!email.match(mailformat))
@@ -109,47 +90,56 @@
             alert("Incorrectly typed password");
             return false;
           }
->>>>>>> development
 
             //using ajax to post data to signupHandler
-          let request = new XMLHttpRequest();
+          // let request = new XMLHttpRequest();
 
-          request.onload = () => {
-              if (request.status === 200) {
-                  let responseData = request.responseText;
-                  alert(responseData)
-                  location.replace("login.php");
-              }
-              else {
-                  alert(request.responseText);
-              }
-          };
+          // request.onload = () => {
+          //     if (request.status === 200) {
+          //         let responseData = request.responseText;
+          //         alert(responseData)
+          //         location.replace("login.php");
+          //     }
+          //     else {
+          //         alert(request.responseText);
+          //     }
+          // };
 
-<<<<<<< HEAD
-            request.open("POST", "signupHandler.php");
-            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
-=======
-          request.open("POST", "signupHandler.php");
-          request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
->>>>>>> development
-        }
-      /*  function ValidateEmail(inputText)
-        {
-          var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-          if(inputText.value.match(mailformat))
-          {
-          alert("Valid email address!");
-          document.form1.text1.focus();
-          return true;
-          }
-          else
-          {
-          alert("You have entered an invalid email address!");
-          document.form1.text1.focus();
-          return false;
-        }*/
+          // request.open("POST", "signupHandler.php");
+          // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          // request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
+
+          // using (jQuery)ajax to post data to signupHandler
+          $.ajax({
+              type: "POST",
+              url: 'signupHandler.php',
+              data: {"email": email,
+                    "password": password,
+                    "fname": firstnames,
+                    "lname": lastname,
+                    "dob": DoB,
+                    "phonenum": phoneNum,
+                    "street": street,
+                    "city": city},
+              success: function(response)
+              {
+                  // var jsonData = JSON.parse(response);
+                  var jsonData = response;
+
+                  // user is logged in successfully in the back-end
+                  // let's redirect
+                  alert(jsonData);
+                  if (JSON.parse(jsonData) === "New user succesfully created")
+                  {
+                    location.href = 'login.php';
+                  }
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+          }  
 
 </script>
 </html>

@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="products-display">
-            <div class="products-display-container">
+            <ul class="products-display-container">
               <?php
               include_once("db.php");
               $stmt = "";
@@ -47,11 +47,10 @@
               while($row = $result->fetch_assoc())
               {
                 $imgpath = $row["imgpath"];
-                echo "<div class='product-card'><img src='$imgpath'></div>";
+                echo "<li class='product-card'><img src='$imgpath'></li>";
               }
-
               ?>
-            </div>
+            </ul>
           </div>
         </div>
       </div>

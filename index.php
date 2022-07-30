@@ -93,14 +93,16 @@
           });
 
           $("#content-slider").lightSlider({
-              loop:true,
+              loop: true,
               mode: 'slide',
               speed: 1000,
               keyPress:true,
               auto: true,
               item: 3,
               pause: 10000,
-              pager: false
+              pager: false,
+              customSlideMove: 3
+              // slideEndAnimation: true
           });
     });
   </script>
