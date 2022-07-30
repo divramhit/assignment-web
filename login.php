@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <?php commonLogin("Log In Page"); ?>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <?php outputHeader("Sign Up", "signup") ?>
@@ -56,22 +57,46 @@
           }
 
             // using ajax to post data to signupHandler
-            let request = new XMLHttpRequest();
+            // let request = new XMLHttpRequest();
 
-            request.onload = () => {
-                if (request.status === 200) {
-                    let responseData = request.responseText;
-                    alert(responseData)
-                    location.replace("index.php");
-                }
-                else {
-                    alert(request.responseText);
-                }
-            };
+            // request.onload = () => {
+            //     if (request.status === 200) {
+            //         let responseData = request.responseText;
+            //         alert(responseData)
+            //         location.replace("index.php");
+            //     }
+            //     else {
+            //         alert(request.responseText);
+            //     }
+            // };
 
-            request.open("POST", "loginHandler.php");
-            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send("email=" + email + "&password=" + password);
+            // request.open("POST", "loginHandler.php");
+            // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // request.send("email=" + email + "&password=" + password);
+            
+            // using (jQuery)ajax to post data to signupHandler
+            $.ajax({
+              type: "POST",
+              url: 'loginHandler.php',
+              data: {"email": email, "password": password},
+              success: function(response)
+              {
+                  // var jsonData = JSON.parse(response);
+                  var jsonData = response;
+
+                  // user is logged in successfully in the back-end
+                  // let's redirect
+                  alert(jsonData);
+                  if (JSON.parse(jsonData) === "Login success")
+                  {
+                    location.href = 'index.php';
+                  }
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
         }
 
         const goToSignup = () => {

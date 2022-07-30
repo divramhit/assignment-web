@@ -49,7 +49,6 @@
                 $imgpath = $row["imgpath"];
                 echo "<li class='product-card'><img src='$imgpath'></li>";
               }
-
               ?>
             </ul>
           </div>

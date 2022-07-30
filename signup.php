@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <?php commonLogin("Sign Up Page"); ?>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <?php outputHeader("Log In", "login") ?>
@@ -90,22 +91,53 @@
           }
 
             //using ajax to post data to signupHandler
-          let request = new XMLHttpRequest();
+          // let request = new XMLHttpRequest();
 
-          request.onload = () => {
-              if (request.status === 200) {
-                  let responseData = request.responseText;
-                  alert(responseData)
-                  location.replace("login.php");
-              }
-              else {
-                  alert(request.responseText);
-              }
-          };
+          // request.onload = () => {
+          //     if (request.status === 200) {
+          //         let responseData = request.responseText;
+          //         alert(responseData)
+          //         location.replace("login.php");
+          //     }
+          //     else {
+          //         alert(request.responseText);
+          //     }
+          // };
 
-          request.open("POST", "signupHandler.php");
-          request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-          request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
+          // request.open("POST", "signupHandler.php");
+          // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          // request.send("fname=" + firstname + "&lname=" + lastname + "&dob=" + DoB + "&phonenum=" + phoneNum + "&street=" + street + "&city=" + city + "&email=" + email + "&password=" + password);
+
+          // using (jQuery)ajax to post data to signupHandler
+          $.ajax({
+              type: "POST",
+              url: 'signupHandler.php',
+              data: {"email": email,
+                    "password": password,
+                    "fname": firstnames,
+                    "lname": lastname,
+                    "dob": DoB,
+                    "phonenum": phoneNum,
+                    "street": street,
+                    "city": city},
+              success: function(response)
+              {
+                  // var jsonData = JSON.parse(response);
+                  var jsonData = response;
+
+                  // user is logged in successfully in the back-end
+                  // let's redirect
+                  alert(jsonData);
+                  if (JSON.parse(jsonData) === "New user succesfully created")
+                  {
+                    location.href = 'login.php';
+                  }
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
         }
 </script>
 </html>
