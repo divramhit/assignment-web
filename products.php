@@ -35,7 +35,10 @@
               $stmt = "";
               if (isset($_GET["query"])) {
                     $queryvalue = $_GET["query"];
-                    $sql = "SELECT * FROM product WHERE Prod_Desc LIKE '%$queryvalue%' OR category LIKE '%$queryvalue%'";
+                    $sql = "SELECT * FROM product
+                            INNER JOIN category ON product.category_id = category.category_id
+                            WHERE Prod_Desc LIKE '%$queryvalue%'
+                            OR category.category_name LIKE '%$queryvalue%'";
                     $stmt = $conn -> prepare($sql);
               }
               else {
