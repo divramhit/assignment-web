@@ -39,7 +39,7 @@ const subnavLinks = document.querySelectorAll('.sub-nav-links a').forEach(link =
     btn_subnavlinks.classList.remove('sub-nav-links-active');
   }
 
-  if ((`${activePage}`) == "/Assignment/"){
+  if ((`${activePage}`) == "/assignment-web/"){
     if (link.id == "index.php"){
       btn_subnavlinks.classList.add('sub-nav-links-active');
     }

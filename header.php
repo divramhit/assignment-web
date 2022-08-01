@@ -1,5 +1,4 @@
 <?php
-session_start();
 function commonHead($title, $pageName) {
   echo '<meta charset="UTF-8">';
   echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
@@ -83,9 +82,9 @@ echo '</li>';
 echo '<li>';
 echo '<a id="favourites.php" href="favourites.php"><div>Favourites</div></a>';
 echo '</li>';
-echo '<li>';
-echo '<a id="contact.php" href="contact.php"><div>Contact</div></a>';
-echo '</li>';
+// echo '<li>';
+// echo '<a id="contact.php" href="contact.php"><div>Contact</div></a>';
+// echo '</li>';
 echo '</ul>';
 echo '</header>';
 echo '<!-- End of Secondary Header -->';

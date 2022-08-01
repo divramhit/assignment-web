@@ -1,13 +1,11 @@
 <?php
-    //Start session management
-    session_start();
-
+include_once('application_top.php');
     //Remove all session variables
     session_unset();
 
     //Destroy the session
     session_destroy();
     
-    header("Location:/Assignment/login.php");
+    header("Location:".PROJECT_ROOT_DIR."login.php");
     exit();
 ?>

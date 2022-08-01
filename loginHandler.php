@@ -1,6 +1,5 @@
+<?php include_once('application_top.php'); ?>
 <?php
-    session_start();
-    include_once("db.php");
 
     //get data from login form
     $email = $_POST["email"];

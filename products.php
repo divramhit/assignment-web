@@ -1,9 +1,34 @@
+<?php include_once('application_top.php'); ?>
+
+<?php
+
+
+              // generate json file
+              $query  = '';
+              if(array_key_exists('query',$_GET)){
+                $query = urlencode($_GET['query']);
+              }
+              $urlGen = WEBSITE_URL_HOST.PROJECT_ROOT_DIR.'prodjsongen.php?query='.$query;//.;
+              
+              $ch = curl_init();
+              // set URL and other appropriate options
+              curl_setopt($ch, CURLOPT_URL, $urlGen);
+              curl_setopt($ch, CURLOPT_HEADER, 0);
+              // grab URL and pass it to the browser
+              curl_exec($ch);
+              // close cURL resource, and free up system resources
+              curl_close($ch);
+              ////////////////
+              
+?>
+
 <!DOCTYPE html>
 <?php include_once("header.php"); ?>
 
 <html lang="en">
   <head>
     <?php commonHead("Products", "products") ?>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
 
 <body>
@@ -31,27 +56,20 @@
           <div class="products-display">
             <ul class="products-display-container">
               <?php
-              include_once("db.php");
-              $stmt = "";
-              if (isset($_GET["query"])) {
-                    $queryvalue = $_GET["query"];
-                    $sql = "SELECT * FROM product
-                            INNER JOIN category ON product.category_id = category.category_id
-                            WHERE Prod_Desc LIKE '%$queryvalue%'
-                            OR category.category_name LIKE '%$queryvalue%'";
-                    $stmt = $conn -> prepare($sql);
-              }
-              else {
-                $stmt = $conn -> prepare("SELECT * FROM product");
+
+
+              $prodData = file_get_contents ('products.json');
+              $allProducts = json_decode($prodData,1);
+
+              if(!empty( $allProducts)){
+                foreach( $allProducts as $k=>$row){
+                  $imgpath = $row["imgpath"];
+                  $ProductID = $row["ProductID"];
+                  echo "<li class='product-card'><img src='$imgpath'><input type='button' value='Add to cart' onclick='addCart($ProductID);' /></li>";
+                }
+
               }
 
-              $stmt -> execute();
-              $result = $stmt -> get_result();
-              while($row = $result->fetch_assoc())
-              {
-                $imgpath = $row["imgpath"];
-                echo "<li class='product-card'><img src='$imgpath'></li>";
-              }
               ?>
             </ul>
           </div>
@@ -59,6 +77,31 @@
       </div>
     </div>
   </div>
+
+  <script type='text/javascript'>
+  const addCart = (productId) => {          
+            action = "add_cart";
+            $.ajax({
+              type: "POST",
+              url: 'updateCartHandler.php',
+              data: {"productId": productId, "quantity": 1, "action": action},
+              dataType: 'json',
+              success: function(response)
+              {
+
+                if(response.status == 'added'){
+                  alert('The product has been added successfully.');
+                }   
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+
+        }
+
+        </script>
 
 
 </body>

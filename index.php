@@ -1,3 +1,4 @@
+<?php include_once('application_top.php'); ?>
 <!DOCTYPE html>
 <?php include_once("header.php"); ?>
 
