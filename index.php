@@ -104,6 +104,29 @@
               customSlideMove: 3
               // slideEndAnimation: true
           });
+
+
+          // $.ajax({
+          //   type: "GET",
+          //   url: 'http://localhost:8000/api/checkSession',
+          //   success: function(response)
+          //   {
+          //       // var jsonData = JSON.parse(response);
+          //       var jsonData = response;
+
+          //       // user is logged in successfully in the back-end
+          //       // let's redirect
+          //       alert(jsonData);
+          //       // if (jsonData === "Login success")
+          //       // {
+          //       //   location.href = 'index.php';
+          //       // }
+          //   },
+          //   error: function(response)
+          //   {
+          //     alert("Invalid Credentials");
+          //   }
+          // });
     });
   </script>
 </html>

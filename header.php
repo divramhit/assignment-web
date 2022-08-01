@@ -5,8 +5,10 @@ function commonHead($title, $pageName) {
   echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
   echo '<meta http-equiv="X-UA-Compatible" content="ie=edge">';
   echo '<link rel="stylesheet" href="style.css">';
-  $pN = $pageName . ".css";
-  echo "<link rel='stylesheet' href='$pN'>";
+  if ($pageName != "none"){
+    $pN = $pageName . ".css";
+    echo "<link rel='stylesheet' href='$pN'>";
+  }
   echo "<title>$title</title>";
   echo '<script src= "index.js" defer></script>';
   echo '<script src= "utility.js" defer></script>';
@@ -46,6 +48,8 @@ if (isset($_SESSION["user"])){
   echo '<li>';
   echo '<a href="logout.php"><div>Log Out</div></a>';
   echo '</li>';
+  echo '<li>';
+  echo '<a href="cart.php"><div><div class="cart-icon"></div></div></a>';
 }
 else{
   echo '<li>';
@@ -54,9 +58,9 @@ else{
   echo '<li>';
   echo '<a href="signup.php"><div>Sign Up</div></a>';
   echo '</li>';
+  echo '<li>';
+  echo '<a href="#"><div><div class="cart-icon"></div></div></a>';
 }
-echo '<li>';
-echo '<a href="#"><div><div class="cart-icon"></div></div></a>';
 echo '</li>';
 echo '</ul>';
 echo '</nav>';

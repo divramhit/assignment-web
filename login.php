@@ -73,8 +73,7 @@
             // request.open("POST", "loginHandler.php");
             // request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             // request.send("email=" + email + "&password=" + password);
-            
-            // using (jQuery)ajax to post data to signupHandler
+
             $.ajax({
               type: "POST",
               url: 'loginHandler.php',
@@ -97,6 +96,30 @@
                 alert("Invalid Credentials");
               }
             });
+            
+            // using (jQuery)ajax to post data to signupHandler with laravel API
+            // $.ajax({
+            //   type: "POST",
+            //   url: 'http://localhost:8000/api/checkLogin',
+            //   data: JSON.stringify({"email": email, "password": password}),
+            //   success: function(response)
+            //   {
+            //       // var jsonData = JSON.parse(response);
+            //       var jsonData = response;
+
+            //       // user is logged in successfully in the back-end
+            //       // let's redirect
+            //       alert(jsonData);
+            //       if (jsonData === "Login success")
+            //       {
+            //         location.href = 'index.php';
+            //       }
+            //   },
+            //   error: function(response)
+            //   {
+            //     alert("Invalid Credentials");
+            //   }
+            // });
         }
 
         const goToSignup = () => {
