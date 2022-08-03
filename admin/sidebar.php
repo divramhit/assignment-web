@@ -12,8 +12,6 @@
     <a href="#category"   onclick="showCategory()" ><i class="fa fa-th-large"></i> Category</a>
     <a href="#products"   onclick="showProductItems()" ><i class="fa fa-th"></i> Products</a>
     <a href="#orders" onclick="showOrders()"><i class="fa fa-list"></i> Orders</a>
-    <a href="#reviews" onclick="showReviews()"><i class="fa fa-thumbs-up"></i> Reviews</a>
-    <a href="#messages" onclick="showMessages()"><i class="fa fa-envelope"></i> Messages</a>
 
   <!---->
 </div>

@@ -30,81 +30,30 @@
                 <div class="card">
                     <i class="fa fa-users  mb-2" style="font-size: 70px;"></i>
                     <h4 style="color:white;">Total Users:</h4>
-                    <h5 style="color:white;">
-                    <?php
-                        $sql="SELECT * from client";
-                        $result=$conn-> query($sql);
-                        $count=0;
-                        if ($result-> num_rows > 0){
-                            while ($row=$result-> fetch_assoc()) {
-
-                                $count=$count+1;
-                            }
-                        }
-                        echo $count;
-                    ?></h5>
+                    <h5 id="number-of-clients" style="color:white;">
+                    </h5>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="card">
                     <i class="fa fa-th-large mb-2" style="font-size: 70px;"></i>
                     <h4 style="color:white;">Total Categories:</h4>
-                    <h5 style="color:white;">
-                    <?php
-
-                       $sql="SELECT * from category";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
+                    <h5 id="number-of-categories" style="color:white;">
                    </h5>
                 </div>
             </div>
             <div class="col-sm-3">
             <div class="card">
-                    <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
-                    <h4 style="color:white;">Total Products:</h4>
-                    <h5 style="color:white;">
-                    <?php
-
-                       $sql="SELECT * from product";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
-                   </h5>
-                </div>
+                <i class="fa fa-th mb-2" style="font-size: 70px;"></i>
+                <h4 style="color:white;">Total Products:</h4>
+                <h5 id="number-of-products" style="color:white;"></h5>
+            </div>
             </div>
             <div class="col-sm-3">
                 <div class="card">
                     <i class="fa fa-list mb-2" style="font-size: 70px;"></i>
                     <h4 style="color:white;">Total orders:</h4>
-                    <h5 style="color:white;">
-                    <?php
-
-                       $sql="SELECT * from ordertable";
-                       $result=$conn-> query($sql);
-                       $count=0;
-                       if ($result-> num_rows > 0){
-                           while ($row=$result-> fetch_assoc()) {
-
-                               $count=$count+1;
-                           }
-                       }
-                       echo $count;
-                   ?>
+                    <h5 id="total-orders" style="color:white;">
                    </h5>
                 </div>
             </div>
@@ -115,5 +64,100 @@
 
 
 </body>
+<script>
+    $(document).ready(function(){
+            //Get all Products
+            $.ajax({
+              type: "GET",
+              url: 'http://localhost:8000/api/get-allproducts',
+              dataType: 'json',
+              success: function(response)
+              {
+                  console.log(Object.keys(response).length);
+                  $('#number-of-products').html(Object.keys(response).length); //Add the count of products
+
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+
+            //Get all Clients using API
+            $.ajax({
+              type: "GET",
+              url: 'http://localhost:8000/api/get-allclients',
+              dataType: 'json',
+              success: function(response)
+              {
+                  console.log(Object.keys(response).length);
+                  $('#number-of-clients').html(Object.keys(response).length);
+
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+
+            //Get all Categories using API
+            $.ajax({
+              type: "GET",
+              url: 'http://localhost:8000/api/get-allcategories',
+              dataType: 'json',
+              success: function(response)
+              {
+                  console.log(Object.keys(response).length);
+                  $('#number-of-categories').html(Object.keys(response).length);
+
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+
+            
+            //Get all orders using API
+            $.ajax({
+              type: "GET",
+              url: 'http://localhost:8000/api/get-allorders',
+              dataType: 'json',
+              success: function(response)
+              {
+                  console.log(Object.keys(response).length);
+                  $('#total-orders').html(Object.keys(response).length);
+
+              },
+              error: function(response)
+              {
+                alert("Invalid Credentials");
+              }
+            });
+
+    });
+
+        //DELETE Product using API
+        const deleteProduct = (productID) => {
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify({"product_id": productID}),
+            url: 'http://localhost:8000/api/delete-product',
+            dataType: 'json',
+            success: function(response)
+            {
+                // console.log(Object.keys(response).length);
+                // $('#number-of-categories').html(Object.keys(response).length);
+                console.log(response);
+                window.location.reload();   
+
+            },
+            error: function(response)
+            {
+            alert("Invalid Credentials");
+            }
+        }); 
+    }
+</script>
 
 </html>

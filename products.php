@@ -50,6 +50,7 @@
                 <li><a href="products.php?query=Phones">Phones</a></li>
                 <li><a href="products.php?query=Games & Consoles">Games & Consoles</a></li>
                 <li><a href="products.php?query=Computer Accessories">Accessories</a></li>
+                <li><a href="products.php?query=TV & Sound">TV & Sound</a></li>
               </ul>
             </div>
           </div>
@@ -65,7 +66,7 @@
                 foreach( $allProducts as $k=>$row){
                   $imgpath = $row["imgpath"];
                   $ProductID = $row["ProductID"];
-                  echo "<li class='product-card'><img src='$imgpath'><input type='button' value='Add to cart' onclick='addCart($ProductID);' /></li>";
+                  echo "<li class='product-card' style='display: flex; flex-direction: column; align-items: center;'><img src='$imgpath'><div style='display: flex; justify-content: center;'><input class = 'add-to-cart-btn' type='button' value='Add to cart' onclick='addCart($ProductID);' /></div></li>";
                 }
 
               }

@@ -17,6 +17,7 @@ function outputHeader($name, $pagelink){
   $pL = $pagelink . ".php";
   echo "<li><a href='$pL'>$name</a></li>";
   echo '<li><a href="index.php">Home</a></li>';
+  echo '<li><a href="admin/AdminIndex.php">Admin</a></li>';
   echo '</ul>';
   echo '</header>';
 }

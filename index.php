@@ -69,8 +69,6 @@
           </li>
         </ul>
       </div>
-      <div id="product-sales" class="product-sales">product-sales</div>
-      <div id="recommended-products" class="recommended-products">recommended-products</div>
     </div>
 
   <?php include_once("footer.php"); ?>

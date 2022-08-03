@@ -14,27 +14,31 @@
     </thead>
     <?php
       include_once "./config/dbconnect.php";
-      $sql="SELECT * from product, category WHERE product.category_id=category.category_id";
+      $sql="SELECT * from product, category WHERE product.category_id=category.category_id AND product.DELETED_FLAG = 0";
       $result=$conn-> query($sql);
       $count=1;
       if ($result-> num_rows > 0){
         while ($row=$result-> fetch_assoc()) {
-    ?>
+          $prod_id = $row["ProductID"];
+          $prod_brand = $row["Prod_Brand"];
+          $prod_img = $row["imgpath"];
+          $prod_desc = $row["Prod_Desc"];
+          $prod_category = $row["category_name"];
+          $prod_price = $row["ListPrice"];
+    echo "
     <tr>
-      <td><?=$count?></td>
-      <td><img height='100px' src='<?=$row["imgpath"]?>'></td>
-      <td><?=$row["Prod_Brand"]?></td>
-      <td><?=$row["Prod_Desc"]?></td>
-      <td><?=$row["category_name"]?></td>
-      <td><?=$row["ListPrice"]?></td>
-      <td><button class="btn btn-primary" style="height:40px" >Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px" >Delete</button></td>
+      <td>$count</td>
+      <td><img height='100px' src='$prod_img'></td>
+      <td>$prod_brand</td>
+      <td>$prod_desc</td>
+      <td>$prod_category</td>
+      <td>$prod_price</td>
+      <td><button class='btn btn-danger' style='height:40px' onclick='deleteProduct($prod_id);'>Delete</button></td>
       </tr>
-      <?php
+      ";
             $count=$count+1;
           }
         }
       ?>
   </table>
-  <td><button class="btn btn-secondary" style="height:40px">Add product</button></td>
 </div>

@@ -5,7 +5,6 @@
       <tr>
         <th class="text-center">No.</th>
         <th class="text-center">Category Name</th>
-        <th class="text-center" colspan="2">Action</th>
       </tr>
     </thead>
     <?php
@@ -15,18 +14,19 @@
       $count=1;
       if ($result-> num_rows > 0){
         while ($row=$result-> fetch_assoc()) {
-    ?>
-    <tr>
-      <td><?=$count?></td>
-      <td><?=$row["category_name"]?></td>
-      <td><button class="btn btn-primary" style="height:40px" >Edit</button></td>
-      <td><button class="btn btn-danger" style="height:40px" >Delete</button></td>
-      </tr>
-      <?php
+          $categoryID = $row["category_id"];
+          $categoryName = $row["category_name"];
+
+        echo "<tr>
+          <td>$count</td>
+          <td>$categoryName</td>
+        </tr>";
             $count=$count+1;
+            
           }
         }
       ?>
+      
   </table>
   <td><button class="btn btn-secondary" style="height:40px">Add category</button></td>
 </div>
